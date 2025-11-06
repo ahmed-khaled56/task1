@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class custom_skip extends StatelessWidget {
   const custom_skip({super.key});
@@ -11,7 +12,9 @@ class custom_skip extends StatelessWidget {
           alignment: Alignment.topRight,
 
           child: Padding(
-            padding: const EdgeInsets.only(right: 37),
+            padding: EdgeInsets.only(
+              right: MediaQuery.sizeOf(context).width * 0.086,
+            ),
             child: Text(
               "Skip",
               style: TextStyle(
@@ -19,7 +22,7 @@ class custom_skip extends StatelessWidget {
                 // decorationColor: Colors.grey[700], // لون الخط
                 // decorationThickness: 2,
                 color: Color(0xff656565),
-                fontSize: 14,
+                fontSize: getResponsiveFontSize(fontSize: 14, context: context),
               ),
             ),
           ),
@@ -29,12 +32,16 @@ class custom_skip extends StatelessWidget {
         Align(
           alignment: Alignment.topRight,
           child: Padding(
-            padding: const EdgeInsets.only(right: 35),
+            padding: EdgeInsets.only(
+              right: MediaQuery.sizeOf(context).width * 0.08139,
+            ),
             child: Container(
-              width: 28, // طول الخط
-              height: 1, // سُمك الخط
-              color: Color(0xff656565), // لون الخط
-              margin: EdgeInsets.only(top: 4), // مسافة بين النص والخط
+              width: MediaQuery.sizeOf(context).width * 0.07511,
+              height: MediaQuery.sizeOf(context).height * .001,
+              color: Color(0xff656565),
+              margin: EdgeInsets.only(
+                top: MediaQuery.sizeOf(context).height * .00429,
+              ),
             ),
           ),
         ),

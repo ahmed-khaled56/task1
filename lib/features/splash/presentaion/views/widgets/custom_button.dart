@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.lable, required this.onPressed});
@@ -8,8 +9,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 177,
-      height: 52,
+      width: MediaQuery.sizeOf(context).width * 0.4,
+      height: MediaQuery.sizeOf(context).height * 0.0697,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: Color(0xff204F38), // button color
@@ -25,7 +26,10 @@ class CustomButton extends StatelessWidget {
         child: Text(
           lable,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: getResponsiveFontSize(
+              fontSize: getResponsiveFontSize(fontSize: 16, context: context),
+              context: context,
+            ),
             fontWeight: FontWeight.w500,
             color: Colors.white,
           ),

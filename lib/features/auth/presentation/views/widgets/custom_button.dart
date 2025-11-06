@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class CustomButton2 extends StatelessWidget {
   const CustomButton2({
@@ -33,27 +34,26 @@ class CustomButton2 extends StatelessWidget {
 
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
-            side: const BorderSide(
+            side: BorderSide(
               //
               color: Colors.black,
-              width: .5,
+              width: MediaQuery.of(context).size.width * 00.23148,
             ),
           ),
           // padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
         ),
         onPressed: onPressed,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(image: AssetImage(imageLink!)),
-            Center(child: Icon(icon, color: icontcolor)),
-            Center(
-              child: Text(
-                lable,
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.normal,
-                  color: Textcolor,
-                ),
+            Icon(icon, color: icontcolor),
+            Text(
+              lable,
+              style: TextStyle(
+                fontSize: getResponsiveFontSize(fontSize: 13, context: context),
+                fontWeight: FontWeight.normal,
+                color: Textcolor,
               ),
             ),
           ],

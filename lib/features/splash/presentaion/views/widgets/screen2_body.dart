@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/splash/presentaion/views/screen3.dart';
 import 'package:task_1/features/splash/presentaion/views/widgets/custom_button.dart';
 import 'package:task_1/features/splash/presentaion/views/widgets/Custom_skipe.dart';
@@ -28,7 +29,7 @@ class Screen2Body extends StatelessWidget {
 
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: getResponsiveFontSize(fontSize: 22, context: context),
 
             color: Color(0xff2F2E41),
           ),
@@ -39,7 +40,7 @@ class Screen2Body extends StatelessWidget {
 
           style: TextStyle(
             fontWeight: FontWeight.normal,
-            fontSize: 17,
+            fontSize: getResponsiveFontSize(fontSize: 17, context: context),
 
             color: Color(0xff78787C),
           ),
