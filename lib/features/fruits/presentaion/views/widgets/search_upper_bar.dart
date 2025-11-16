@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
-import 'package:task_1/features/fruits/presentaion/views/search_screen.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/filter_bottomSheet.dart';
 
-class HomeUpperBar extends StatelessWidget {
-  const HomeUpperBar({super.key});
+class SearchUpperBar extends StatelessWidget {
+  const SearchUpperBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +29,15 @@ class HomeUpperBar extends StatelessWidget {
                 ),
               ),
               const Spacer(),
+
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SearchScreen()),
-                  );
+                  filterSheet(context);
                 },
                 child: const Image(
-                  image: AssetImage("assets/images/search.png"),
+                  image: AssetImage("assets/images/settings.png"),
                 ),
               ),
-              SizedBox(width: MediaQuery.sizeOf(context).width * .04),
-              const Image(image: AssetImage("assets/images/settings.png")),
             ],
           ),
         ),

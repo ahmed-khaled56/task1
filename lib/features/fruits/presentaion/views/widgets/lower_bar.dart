@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 
 class LowerBar extends StatelessWidget {
-  const LowerBar({super.key});
+  const LowerBar({
+    super.key,
+    @required this.selectedIcon1,
+    @required this.selectedIcon2,
+    @required this.selectedIcon3,
+    @required this.selectedIcon4,
+    @required this.selectedIcon5,
+  });
+  final String? selectedIcon1;
+  final String? selectedIcon2;
+  final String? selectedIcon3;
+  final String? selectedIcon4;
+  final String? selectedIcon5;
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +35,25 @@ class LowerBar extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Image(image: AssetImage("assets/images/IconBar1.png")),
+            selectedIcon1 == null
+                ? Image(image: AssetImage("assets/images/homeicon.png"))
+                : Image(image: AssetImage(selectedIcon1!)),
             Spacer(),
-            Image(image: AssetImage("assets/images/iconBar2.png")),
+            selectedIcon2 == null
+                ? Image(image: AssetImage("assets/images/iconBar2.png"))
+                : Image(image: AssetImage(selectedIcon2!)),
             Spacer(),
-            Image(image: AssetImage("assets/images/IconBar3.png")),
+            selectedIcon3 == null
+                ? Image(image: AssetImage("assets/images/IconBar3.png"))
+                : Image(image: AssetImage(selectedIcon3!)),
             Spacer(),
-            Image(image: AssetImage("assets/images/IconBar4.png")),
+            selectedIcon4 == null
+                ? Image(image: AssetImage("assets/images/IconBar4.png"))
+                : Image(image: AssetImage(selectedIcon4!)),
             Spacer(),
-            Image(image: AssetImage("assets/images/iconBar5.png")),
+            selectedIcon5 == null
+                ? Image(image: AssetImage("assets/images/iconBar5.png"))
+                : Image(image: AssetImage(selectedIcon5!)),
           ],
         ),
       ),

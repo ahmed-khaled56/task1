@@ -29,7 +29,7 @@ class _AdsListState extends State<AdsList> {
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.sizeOf(context).width * .03088,
           ),
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.104,
 
             child: ClipRRect(

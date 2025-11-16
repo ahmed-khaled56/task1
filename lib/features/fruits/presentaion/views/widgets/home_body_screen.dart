@@ -38,7 +38,7 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
         SellerList(),
         Flexible(child: SizedBox(height: MediaQuery.sizeOf(context).height)),
 
-        LowerBar(),
+        LowerBar(selectedIcon1: "assets/images/selectedhome.png"),
       ],
     );
   }
