@@ -10,8 +10,8 @@ class ScrollDotsIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        bottom: MediaQuery.sizeOf(context).height * .01575,
-        top: MediaQuery.sizeOf(context).height * 0.0346,
+        // bottom: MediaQuery.sizeOf(context).height * .01575,
+        top: MediaQuery.sizeOf(context).height * 0.0146,
       ),
       child: DotsIndicator(
         color: const Color(0xff204F38),

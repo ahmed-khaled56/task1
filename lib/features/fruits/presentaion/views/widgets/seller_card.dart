@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/card_info.dart';
 
-class SearchCard extends StatelessWidget {
-  const SearchCard({
+class SellerCard extends StatelessWidget {
+  const SellerCard({
     super.key,
     @required this.icon,
 
@@ -12,11 +12,13 @@ class SearchCard extends StatelessWidget {
 
     required this.sellerName,
     required this.rate,
+    required this.imageLink,
   });
 
   final String? icon;
 
   final String? timeDelev;
+  final String? imageLink;
   final String? openClosd;
 
   final String? sellerName;
@@ -34,7 +36,7 @@ class SearchCard extends StatelessWidget {
         child: Card(
           elevation: 5,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(20),
           ),
           color: Colors.white,
           child: Padding(
@@ -47,12 +49,14 @@ class SearchCard extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(0),
-                  child: Image.asset(
-                    "assets/images/squreImage.png",
-                    width: MediaQuery.sizeOf(context).width * .132,
-                    height: MediaQuery.sizeOf(context).height * .061,
-                    fit: BoxFit.cover,
-                  ),
+                  child: imageLink != null
+                      ? Image.asset(
+                          imageLink!,
+                          width: MediaQuery.sizeOf(context).width * .132,
+                          height: MediaQuery.sizeOf(context).height * .061,
+                          fit: BoxFit.cover,
+                        )
+                      : Text(""),
                 ),
                 SizedBox(width: MediaQuery.sizeOf(context).width * .04),
                 Expanded(
@@ -109,7 +113,7 @@ class SearchCard extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Delivery : ${timeDelev}",
+                            "Delivery : $timeDelev",
                             style: TextStyle(
                               fontSize: getResponsiveFontSize(
                                 fontSize: 14,

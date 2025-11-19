@@ -125,15 +125,20 @@ void filterSheet(BuildContext context) {
                     width: MediaQuery.sizeOf(context).width * .567,
                   ),
                 ),
-                Text(
-                  "Close",
-                  style: TextStyle(
-                    fontSize: getResponsiveFontSize(
-                      fontSize: 16,
-                      context: context,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Close",
+                    style: TextStyle(
+                      fontSize: getResponsiveFontSize(
+                        fontSize: 16,
+                        context: context,
+                      ),
+                      color: Color(0xff656565),
+                      fontWeight: FontWeight.normal,
                     ),
-                    color: Color(0xff656565),
-                    fontWeight: FontWeight.normal,
                   ),
                 ),
               ],

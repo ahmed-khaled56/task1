@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_1/cores/widgets/responsive_text_method.dart';
+import 'package:task_1/features/fruits/presentaion/views/seller_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/TextRow.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/custom_seller_card.dart';
 
@@ -11,7 +11,7 @@ class SellerList extends StatefulWidget {
 }
 
 class _SellerListState extends State<SellerList> {
-  final List<Widget> cardsList = const [
+  final List<dynamic> cardsList = const [
     CustomSellerCard(
       delevPrice: "0.5 KD",
       distance: "2.5 KM",
@@ -20,6 +20,7 @@ class _SellerListState extends State<SellerList> {
       openClosd: "open",
       rate: 4.5,
       sellerName: "Seller Name",
+      imageLink: "assets/images/sellerImage.png",
     ),
     CustomSellerCard(
       delevPrice: "0.5 KD",
@@ -44,19 +45,26 @@ class _SellerListState extends State<SellerList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextRow(
-          text1: "Seller",
-          text2: "Show All",
-          toppadding: MediaQuery.sizeOf(context).height * .013,
-        ),
+        TextRow(text1: "Seller", text2: "Show All", toppadding: 0),
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.4,
           child: ListView.builder(
             padding: EdgeInsets.only(
-              top: MediaQuery.sizeOf(context).height * .01,
+              top: MediaQuery.sizeOf(context).height * .0001,
             ),
             itemCount: cardsList.length,
-            itemBuilder: (context, index) => cardsList[index],
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SellerScreen(customSellerCard: cardsList[index]),
+                  ),
+                );
+              },
+              child: cardsList[index],
+            ),
           ),
         ),
       ],

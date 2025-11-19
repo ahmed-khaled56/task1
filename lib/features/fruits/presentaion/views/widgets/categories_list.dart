@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class CategoriesList extends StatelessWidget {
-  CategoriesList({super.key});
-  List<String> lisnksLIst = [
-    "assets/images/resturant.png",
-    "assets/images/farm.png",
-    "assets/images/coffe.png",
-    "assets/images/pharma.png",
-  ];
+  CategoriesList({
+    super.key,
+    required this.lisnksLIst,
+    @required this.namesList,
+  });
+
+  final List<String> lisnksLIst;
+  final List<String>? namesList;
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +18,32 @@ class CategoriesList extends StatelessWidget {
 
       child: SizedBox(
         //width: MediaQuery.sizeOf(context).width * .9,
-        height: MediaQuery.sizeOf(context).height * .09583,
+        height: MediaQuery.sizeOf(context).height * .1683,
         child: ListView.builder(
           itemCount: lisnksLIst.length,
           scrollDirection: Axis.horizontal,
 
           itemBuilder: (context, index) {
-            return Image(
-              image: AssetImage(lisnksLIst[index]),
-              width: MediaQuery.sizeOf(context).width * .23604,
+            return Column(
+              children: [
+                Image(
+                  image: AssetImage(lisnksLIst[index]),
+                  width: MediaQuery.sizeOf(context).width * .23604,
 
-              height: MediaQuery.sizeOf(context).height * .13583,
+                  height: MediaQuery.sizeOf(context).height * .13583,
+                ),
+                Text(
+                  namesList != null ? namesList![index] : "",
+                  style: TextStyle(
+                    color: Color(0xff292727),
+                    fontSize: getResponsiveFontSize(
+                      fontSize: 14,
+                      context: context,
+                    ),
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
             );
           },
         ),

@@ -20,7 +20,7 @@ class _AdsListState extends State<AdsList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .1046,
+      height: MediaQuery.sizeOf(context).height * .1346,
       child: PageView.builder(
         controller: _pageController,
         itemCount: 4,

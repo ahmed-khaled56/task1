@@ -11,6 +11,7 @@ class CustomSellerCard extends StatelessWidget {
     required this.foodName,
     required this.sellerName,
     required this.rate,
+    this.imageLink,
   });
 
   final String? icon;
@@ -18,6 +19,7 @@ class CustomSellerCard extends StatelessWidget {
   final String? distance;
   final String? openClosd;
   final String? foodName;
+  final String? imageLink;
   final String? sellerName;
   final double? rate;
 

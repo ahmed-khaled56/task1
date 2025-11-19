@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/fruits/presentaion/views/search_screen.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/filter_bottomSheet.dart';
 
 class HomeUpperBar extends StatelessWidget {
-  const HomeUpperBar({super.key});
+  const HomeUpperBar({super.key, this.onTap});
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -36,18 +38,30 @@ class HomeUpperBar extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => SearchScreen()),
                   );
                 },
-                child: const Image(
-                  image: AssetImage("assets/images/search.png"),
+                child: GestureDetector(
+                  onTap: onTap,
+
+                  child: const Image(
+                    image: AssetImage("assets/images/search.png"),
+                  ),
                 ),
               ),
               SizedBox(width: MediaQuery.sizeOf(context).width * .04),
-              const Image(image: AssetImage("assets/images/settings.png")),
+              GestureDetector(
+                onTap: () {
+                  filterSheet(context);
+                },
+
+                child: const Image(
+                  image: AssetImage("assets/images/settings.png"),
+                ),
+              ),
             ],
           ),
         ),
         Padding(
           padding: EdgeInsets.only(
-            bottom: MediaQuery.sizeOf(context).height * .0166,
+            bottom: MediaQuery.sizeOf(context).height * .0146,
           ),
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.001,
