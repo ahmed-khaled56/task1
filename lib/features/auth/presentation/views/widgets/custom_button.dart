@@ -43,10 +43,7 @@ class CustomButton2 extends StatelessWidget {
           elevation: 3,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
-            side: const BorderSide(
-              color: Colors.black,
-              width: 1.2, // خليها قيمة ثابتة بسيطة
-            ),
+            side: const BorderSide(color: Colors.black, width: 1.2),
           ),
         ),
         onPressed: onPressed,

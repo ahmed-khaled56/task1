@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
+import 'package:task_1/features/fruits/presentaion/views/checkout_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/basket_card.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/basket_lower_bar.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/basket_upper_bar.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/checkout_screen_body.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/dotted_line.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/price_row_text.dart';
 
@@ -13,7 +15,7 @@ class BasketScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        BasketUpperBar(),
+        CustomUpperbar(title: "Basket"),
         BasketItemCard(
           beforePrice: "14.00 KD",
           price: "12.00 KD",
@@ -107,7 +109,14 @@ class BasketScreenBody extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CheckoutScreen(),
+                            ),
+                          );
+                        },
                         child: Text(
                           "Proceed To Checkout",
                           style: TextStyle(

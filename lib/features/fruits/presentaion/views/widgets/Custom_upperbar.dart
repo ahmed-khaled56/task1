@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
-class BasketUpperBar extends StatelessWidget {
-  const BasketUpperBar({super.key});
-
+class CustomUpperbar extends StatelessWidget {
+  const CustomUpperbar({super.key, required this.title});
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +24,7 @@ class BasketUpperBar extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                'Basket',
+                title,
                 style: TextStyle(
                   color: const Color(0xff204F38),
                   fontSize: getResponsiveFontSize(
