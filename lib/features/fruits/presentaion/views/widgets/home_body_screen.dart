@@ -3,7 +3,7 @@ import 'package:task_1/features/fruits/presentaion/views/widgets/ads_list.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/categories_list.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/custom_search_textfield.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/home_upper_bar.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/lower_bar.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/home_lower_bar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/scroll_dots_indicator.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/seller_list.dart';
 
@@ -61,7 +61,7 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
         SellerList(),
 
         Flexible(child: SizedBox(height: MediaQuery.sizeOf(context).height)),
-        LowerBar(selectedIcon1: "assets/images/selectedhome.png"),
+        LowerBar(),
       ],
     );
   }

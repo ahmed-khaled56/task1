@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/TextRow.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/custom_search_textfield.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/lower_bar.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/home_lower_bar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/seller_card.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/search_upper_bar.dart';
 

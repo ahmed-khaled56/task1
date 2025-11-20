@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/card_info.dart';
 
 class SellerCard extends StatelessWidget {
   const SellerCard({

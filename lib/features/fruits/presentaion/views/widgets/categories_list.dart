@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class CategoriesList extends StatelessWidget {
-  CategoriesList({
+  const CategoriesList({
     super.key,
     required this.lisnksLIst,
     @required this.namesList,

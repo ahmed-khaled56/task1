@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
+import 'package:task_1/features/fruits/presentaion/views/product_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/search_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/categories_list.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/custom_search_textfield.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/custom_seller_card.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/filter_bottomSheet.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/product_card.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/seller_card.dart';
 
@@ -63,7 +62,12 @@ class _SellerScreenBodyState extends State<SellerScreenBody> {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back_ios),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(Icons.arrow_back_ios),
+                  ),
                   Spacer(),
                   Text(
                     'Fruit Market',
@@ -189,7 +193,15 @@ class _SellerScreenBodyState extends State<SellerScreenBody> {
 
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ProductScreen(productCard: productsCardsList[index]),
+                    ),
+                  );
+                },
                 child: productsCardsList[index],
               );
             },
