@@ -1,15 +1,23 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:task_1/features/splash/presentaion/views/splash_view.dart';
+import 'package:device_preview/device_preview.dart';
+// void main() async {
+//   // await SystemChrome.setPreferredOrientations([
+//   //   DeviceOrientation.portraitUp,
+//   //   DeviceOrientation.portraitDown,
+//   //   DeviceOrientation.landscapeLeft,
+//   //   DeviceOrientation.landscapeRight,
+//   // ]);
 
-void main() async {
-  // await SystemChrome.setPreferredOrientations([
-  //   DeviceOrientation.portraitUp,
-  //   DeviceOrientation.portraitDown,
-  //   DeviceOrientation.landscapeLeft,
-  //   DeviceOrientation.landscapeRight,
-  // ]);
-  runApp(const MyApp());
-}
+//   runApp(const MyApp());
+// }
+void main() => runApp(
+  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => MyApp(), // Wrap your app
+  ),
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,6 +25,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashView());
+    return MaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      home: SplashView(),
+    );
   }
 }

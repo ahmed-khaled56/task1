@@ -60,8 +60,6 @@ class _OtpScreenBodyState extends State<OtpScreenBody> {
         ),
         SizedBox(height: MediaQuery.sizeOf(context).height * .03648),
         CustomRow(
-          lineWidth: MediaQuery.sizeOf(context).width * 0.14,
-          linehieght: MediaQuery.sizeOf(context).height * .0007,
           ontap: () {},
           fontsize1: 16,
           fontsize2: 16,

@@ -192,8 +192,8 @@ class _SecondLoginscreenbodyState extends State<SecondLoginscreenbody> {
           SizedBox(height: MediaQuery.sizeOf(context).height * 00.0418),
           CustomRow(
             decoration: TextDecoration.underline,
-            lineWidth: MediaQuery.sizeOf(context).width * 0.14,
-            linehieght: MediaQuery.sizeOf(context).height * .0007,
+            // lineWidth: MediaQuery.sizeOf(context).width * 0.14,
+            // linehieght: MediaQuery.sizeOf(context).height * .0007,
             ontap: () {
               Navigator.push(
                 context,

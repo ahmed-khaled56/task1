@@ -30,38 +30,49 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        HomeUpperBar(
-          onTap: () {
-            setState(() {
-              isPressed = true;
-            });
-          },
-        ),
-
-        // SizedBox(height: MediaQuery.sizeOf(context).height * .0001),
-        isPressed == false
-            ? Column(
+        Expanded(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: Column(
                 children: [
-                  AdsList(),
-                  ScrollDotsIndicator(currentIndex: currentIndex),
-                ],
-              )
-            : CustomSearchTextfield(),
+                  HomeUpperBar(onTap: () => setState(() => isPressed = true)),
 
-        //   SizedBox(height: MediaQuery.sizeOf(context).height * .0001),
-        CategoriesList(
-          lisnksLIst: [
-            "assets/images/resturant.png",
-            "assets/images/farm.png",
-            "assets/images/coffe.png",
-            "assets/images/pharma.png",
-          ],
+                  isPressed == false
+                      ? Column(
+                          children: [
+                            AdsList(
+                              onPageChanged: (index) {
+                                setState(() => currentIndex = index);
+                              },
+                            ),
+                            ScrollDotsIndicator(currentIndex: currentIndex),
+                          ],
+                        )
+                      : CustomSearchTextfield(),
+
+                  CategoriesList(
+                    namesList: ["Fruits", "Vegetables", "Phone", "Pets"],
+                    lisnksLIst: [
+                      "assets/images/resturant.png",
+                      "assets/images/farm.png",
+                      "assets/images/coffe.png",
+                      "assets/images/pharma.png",
+                    ],
+                  ),
+
+                  SellerList(),
+
+                  // LowerBar(),
+                ],
+              ),
+            ),
+          ),
         ),
 
-        SellerList(),
+        // LowerBar(),
 
-        Flexible(child: SizedBox(height: MediaQuery.sizeOf(context).height)),
-        LowerBar(),
+        //  Flexible(child: SizedBox(height: )),
       ],
     );
   }

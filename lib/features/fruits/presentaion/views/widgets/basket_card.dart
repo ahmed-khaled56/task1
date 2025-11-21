@@ -17,8 +17,8 @@ class BasketItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .124,
-      width: MediaQuery.sizeOf(context).width * .96,
+      height: MediaQuery.sizeOf(context).height * .134,
+      width: MediaQuery.sizeOf(context).width * .9,
       child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -98,57 +98,70 @@ class BasketItemCard extends StatelessWidget {
                       ],
                     ),
 
-                    Row(
-                      children: [
-                        note != null
-                            ? Container(
-                                width: MediaQuery.sizeOf(context).width * .237,
-                                height:
-                                    MediaQuery.sizeOf(context).height * .0236,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xffDF958F),
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "Up to 10% Off",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: getResponsiveFontSize(
-                                        fontSize: 12,
-                                        context: context,
+                    Expanded(
+                      child: Row(
+                        children: [
+                          note != null
+                              ? Expanded(
+                                  child: Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * .237,
+                                    height:
+                                        MediaQuery.sizeOf(context).height *
+                                        .0236,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xffDF958F),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    child: SizedBox(
+                                      child: Center(
+                                        child: Text(
+                                          "Up to 10% Off",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: getResponsiveFontSize(
+                                              fontSize: 12,
+                                              context: context,
+                                            ),
+                                            color: Colors.white,
+                                          ),
+                                        ),
                                       ),
-                                      color: Colors.white,
                                     ),
                                   ),
+                                )
+                              : Text(""),
+
+                          Expanded(
+                            child: SizedBox(
+                              width: MediaQuery.sizeOf(context).width * .09,
+                            ),
+                          ),
+
+                          Expanded(
+                            child: Container(
+                              height: MediaQuery.sizeOf(context).height * .0293,
+                              width: MediaQuery.sizeOf(context).width * .275,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                border: Border.all(
+                                  color: const Color(0xffD1D1D1),
                                 ),
-                              )
-                            : Text(""),
+                              ),
 
-                        Expanded(
-                          child: SizedBox(
-                            width: MediaQuery.sizeOf(context).width * .09,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: const [
+                                  Icon(Icons.remove, size: 16),
+                                  Text("1"),
+                                  Icon(Icons.add, size: 16),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
-
-                        Container(
-                          height: MediaQuery.sizeOf(context).height * .0293,
-                          width: MediaQuery.sizeOf(context).width * .275,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: const Color(0xffD1D1D1)),
-                          ),
-
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: const [
-                              Icon(Icons.remove, size: 16),
-                              Text("1"),
-                              Icon(Icons.add, size: 16),
-                            ],
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),

@@ -38,8 +38,13 @@ class CustomPayment extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Image(image: AssetImage(imageLink)),
-                  Spacer(flex: 1),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      right: MediaQuery.sizeOf(context).width * .03,
+                    ),
+                    child: Image(image: AssetImage(imageLink)),
+                  ),
+
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -54,7 +59,7 @@ class CustomPayment extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(flex: 5),
+                  Spacer(),
                   CustSelected
                       ? Icon(
                           Icons.check_circle,

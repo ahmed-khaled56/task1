@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/basket_lower_bar.dart';
 import 'package:task_1/features/payment/presentation/views/widgets/checkout_screen_body.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -6,6 +7,10 @@ class CheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: CheckoutScreenBody()));
+    return Scaffold(
+      body: SafeArea(child: CheckoutScreenBody()),
+
+      bottomNavigationBar: BasketLowerBar(),
+    );
   }
 }

@@ -18,7 +18,7 @@ class FailureScreenBody extends StatelessWidget {
         SizedBox(height: MediaQuery.sizeOf(context).height * .06),
         Text(
           "OPS!",
-
+          textAlign: TextAlign.center,
           style: TextStyle(
             color: Color(0xffFF4A4A),
             fontSize: getResponsiveFontSize(fontSize: 26, context: context),
@@ -29,6 +29,7 @@ class FailureScreenBody extends StatelessWidget {
         SizedBox(height: MediaQuery.sizeOf(context).height * .02),
 
         Text(
+          textAlign: TextAlign.center,
           "Error while confirming your payment/order",
 
           style: TextStyle(

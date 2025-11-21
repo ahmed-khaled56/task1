@@ -47,23 +47,30 @@ class _SellerListState extends State<SellerList> {
       children: [
         TextRow(text1: "Seller", text2: "Show All", toppadding: 0),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.4,
-          child: ListView.builder(
+          height: MediaQuery.of(context).size.height * 0.5,
+          child: Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.sizeOf(context).height * .0001,
+              // top: MediaQuery.sizeOf(context).height * .0001,
+              bottom: MediaQuery.sizeOf(context).height * .1,
             ),
-            itemCount: cardsList.length,
-            itemBuilder: (context, index) => GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        SellerScreen(customSellerCard: cardsList[index]),
-                  ),
-                );
-              },
-              child: cardsList[index],
+            child: ListView.builder(
+              padding: EdgeInsets.only(
+                top: MediaQuery.sizeOf(context).height * .0001,
+                // bottom: MediaQuery.sizeOf(context).height * .01,
+              ),
+              itemCount: cardsList.length,
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          SellerScreen(customSellerCard: cardsList[index]),
+                    ),
+                  );
+                },
+                child: cardsList[index],
+              ),
             ),
           ),
         ),

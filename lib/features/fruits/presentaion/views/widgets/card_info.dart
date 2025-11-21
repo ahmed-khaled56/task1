@@ -49,22 +49,30 @@ class CardInfo extends StatelessWidget {
             icon != null
                 ? Padding(
                     padding: EdgeInsets.only(
-                      right: MediaQuery.sizeOf(context).width * .20788,
+                      //right: MediaQuery.sizeOf(context).width * .20788,
                     ),
                     child: Image.asset(icon!),
                   )
                 : Padding(
                     padding: EdgeInsets.only(
-                      right: MediaQuery.sizeOf(context).width * .20788,
+                      //  right: MediaQuery.sizeOf(context).width * .20788,
                     ),
                     child: Text("   "),
                   ),
-            SizedBox(width: 6),
-            Text(
-              "$rate",
-              style: TextStyle(
-                fontSize: getResponsiveFontSize(fontSize: 14, context: context),
-                color: const Color(0xff656565),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(
+                right: MediaQuery.sizeOf(context).width * .0488,
+              ),
+              child: Text(
+                "$rate",
+                style: TextStyle(
+                  fontSize: getResponsiveFontSize(
+                    fontSize: 14,
+                    context: context,
+                  ),
+                  color: const Color(0xff656565),
+                ),
               ),
             ),
           ],

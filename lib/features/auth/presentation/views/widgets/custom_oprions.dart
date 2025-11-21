@@ -11,8 +11,8 @@ class CustomOptions extends StatelessWidget {
       children: [
         CustomRow(
           decoration: TextDecoration.underline,
-          lineWidth: MediaQuery.sizeOf(context).width * 0.14,
-          linehieght: MediaQuery.sizeOf(context).height * 000.001,
+          // lineWidth: MediaQuery.sizeOf(context).width * 0.14,
+          // linehieght: MediaQuery.sizeOf(context).height * 000.001,
           ontap: () {
             Navigator.push(
               context,

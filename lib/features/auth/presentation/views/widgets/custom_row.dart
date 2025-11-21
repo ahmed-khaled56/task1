@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
+import 'package:flutter/material.dart';
+import 'package:task_1/cores/widgets/responsive_text_method.dart';
+
 class CustomRow extends StatelessWidget {
   const CustomRow({
     super.key,
@@ -11,10 +14,9 @@ class CustomRow extends StatelessWidget {
     required this.color1,
     required this.color2,
     required this.ontap,
-    @required this.lineWidth,
-    @required this.linehieght,
-    @required this.decoration,
+    this.decoration,
   });
+
   final String text1;
   final String text2;
   final double fontsize1;
@@ -22,66 +24,54 @@ class CustomRow extends StatelessWidget {
   final Color color1;
   final Color color2;
   final void Function()? ontap;
-  final double? lineWidth;
-  final double? linehieght;
   final TextDecoration? decoration;
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          text1,
-          style: TextStyle(
-            fontSize: getResponsiveFontSize(fontSize: 16, context: context),
-            fontWeight: FontWeight.normal,
-            color: color1,
-          ),
-        ),
+    return Center(
+      child: Wrap(
+        alignment: WrapAlignment.center,
 
-        GestureDetector(
-          onTap: ontap,
-
-          // child: lineWidth != null
-          //     ? Column(
-          //         children: [
-          //           Text(
-          //             text2,
-          //             style: TextStyle(
-          //               fontSize: getResponsiveFontSize(
-          //                 fontSize: 16,
-          //                 context: context,
-          //               ),
-          //               fontWeight: FontWeight.normal,
-          //               color: color2,
-          //             ),
-          //           ),
-
-          //           Container(
-          //             width: lineWidth,
-          //             height: linehieght,
-          //             color: Color(0xff004D8E),
-          //             margin: EdgeInsets.only(
-          //               top: MediaQuery.sizeOf(context).height * .00429,
-          //             ),
-          //           ),
-          //         ],
-          //       )
-          child: Text(
-            text2,
+        children: [
+          Text(
+            text1,
+            textHeightBehavior: const TextHeightBehavior(
+              applyHeightToFirstAscent: false,
+              applyHeightToLastDescent: false,
+            ),
             style: TextStyle(
-              decoration: TextDecoration.underline,
-              decorationColor: decoration == null
-                  ? Colors.white
-                  : Colors.blue, // optional
-              decorationThickness: 3,
-              fontSize: getResponsiveFontSize(fontSize: 16, context: context),
-              fontWeight: FontWeight.normal,
-              color: color2,
+              fontSize: getResponsiveFontSize(
+                fontSize: fontsize1,
+                context: context,
+              ),
+              color: color1,
+              height: 1.1,
             ),
           ),
-        ),
-      ],
+
+          GestureDetector(
+            onTap: ontap,
+            child: Text(
+              text2,
+              textHeightBehavior: const TextHeightBehavior(
+                applyHeightToFirstAscent: false,
+                applyHeightToLastDescent: false,
+              ),
+              style: TextStyle(
+                fontSize: getResponsiveFontSize(
+                  fontSize: fontsize2,
+                  context: context,
+                ),
+                color: color2,
+                height: 1.1,
+                decoration: decoration ?? TextDecoration.underline,
+                decorationColor: color2,
+                decorationThickness: 3,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
