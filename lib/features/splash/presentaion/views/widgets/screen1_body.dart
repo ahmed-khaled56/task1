@@ -17,7 +17,7 @@ class Screen1Body extends StatelessWidget {
     final realWidth = size.width < size.height ? size.width : size.height;
     return Column(
       children: [
-        SizedBox(height: realHeight * 0.08154),
+        SizedBox(height: realHeight * 0.04154),
         custom_skip(),
         SizedBox(height: realHeight * 0.06545),
 
@@ -66,6 +66,10 @@ class Screen1Body extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const Screen2()),
             );
           },
+        ),
+
+        Expanded(
+          child: SizedBox(height: MediaQuery.of(context).size.height * 0.197),
         ),
         Expanded(child: SizedBox(height: realHeight * 0.197)),
       ],

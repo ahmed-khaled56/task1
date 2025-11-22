@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/basket_view.dart';
-import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
 
-class LowerBar extends StatefulWidget {
-  const LowerBar({super.key});
+class OrderLowerBar extends StatefulWidget {
+  const OrderLowerBar({super.key});
 
   @override
-  State<LowerBar> createState() => _LowerBarState();
+  State<OrderLowerBar> createState() => _OrderLowerBarState();
 }
 
-class _LowerBarState extends State<LowerBar> {
+class _OrderLowerBarState extends State<OrderLowerBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,18 +29,21 @@ class _LowerBarState extends State<LowerBar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: Image(image: AssetImage("assets/images/selectedhome.png")),
-            ),
-            //  Spacer(),
-            Expanded(
               child: GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => OrderScreen()),
+                    MaterialPageRoute(builder: (context) => HomeView()),
                   );
                 },
-                child: Image(image: AssetImage("assets/images/iconBar2.png")),
+
+                child: Image(image: AssetImage("assets/images/homeicon.png")),
+              ),
+            ),
+            //  Spacer(),
+            Expanded(
+              child: Image(
+                image: AssetImage("assets/images/selectedOrder.png"),
               ),
             ),
 
@@ -54,7 +56,6 @@ class _LowerBarState extends State<LowerBar> {
                     MaterialPageRoute(builder: (context) => BasketView()),
                   );
                 },
-
                 child: Image(image: AssetImage("assets/images/IconBar3.png")),
               ),
             ),
