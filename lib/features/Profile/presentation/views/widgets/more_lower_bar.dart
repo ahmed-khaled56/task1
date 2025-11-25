@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:task_1/features/Profile/presentation/views/more_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/basket_view.dart';
+import 'package:task_1/features/fruits/presentaion/views/favourite_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/basket_lower_bar.dart';
 
 class MoreLowerBar extends StatefulWidget {
   const MoreLowerBar({super.key});
@@ -60,18 +62,42 @@ class _MoreLowerBarState extends State<MoreLowerBar> {
 
             //   Spacer(),
             Expanded(
-              child: Image(image: AssetImage("assets/images/IconBar3.png")),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BasketView()),
+                  );
+                },
+                child: Image(image: AssetImage("assets/images/IconBar3.png")),
+              ),
             ),
 
             // Spacer(),
             Expanded(
-              child: Image(image: AssetImage("assets/images/IconBar4.png")),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FavouriteScreen()),
+                  );
+                },
+                child: Image(image: AssetImage("assets/images/IconBar4.png")),
+              ),
             ),
 
             // Spacer(),
             Expanded(
-              child: Image(
-                image: AssetImage("assets/images/sellectedMore.png"),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MoreScreen()),
+                  );
+                },
+                child: Image(
+                  image: AssetImage("assets/images/sellectedMore.png"),
+                ),
               ),
             ),
           ],

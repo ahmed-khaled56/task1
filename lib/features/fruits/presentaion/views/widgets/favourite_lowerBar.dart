@@ -4,15 +4,16 @@ import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/basket_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/favourite_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/basket_lower_bar.dart';
 
-class LowerBar extends StatefulWidget {
-  const LowerBar({super.key});
+class FavouriteLowerbar extends StatefulWidget {
+  const FavouriteLowerbar({super.key});
 
   @override
-  State<LowerBar> createState() => _LowerBarState();
+  State<FavouriteLowerbar> createState() => _FavouriteLowerbarState();
 }
 
-class _LowerBarState extends State<LowerBar> {
+class _FavouriteLowerbarState extends State<FavouriteLowerbar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,12 +28,23 @@ class _LowerBarState extends State<LowerBar> {
       ),
 
       child: Padding(
-        padding: EdgeInsets.only(left: MediaQuery.sizeOf(context).width * 0.04),
+        padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.sizeOf(context).width * 0.02,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: Image(image: AssetImage("assets/images/selectedhome.png")),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeView()),
+                  );
+                },
+
+                child: Image(image: AssetImage("assets/images/homeicon.png")),
+              ),
             ),
             //  Spacer(),
             Expanded(
@@ -43,6 +55,7 @@ class _LowerBarState extends State<LowerBar> {
                     MaterialPageRoute(builder: (context) => OrderScreen()),
                   );
                 },
+
                 child: Image(image: AssetImage("assets/images/iconBar2.png")),
               ),
             ),
@@ -53,25 +66,16 @@ class _LowerBarState extends State<LowerBar> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BasketView()),
+                    MaterialPageRoute(builder: (context) => BasketLowerBar()),
                   );
                 },
-
                 child: Image(image: AssetImage("assets/images/IconBar3.png")),
               ),
             ),
 
             // Spacer(),
             Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FavouriteScreen()),
-                  );
-                },
-                child: Image(image: AssetImage("assets/images/IconBar4.png")),
-              ),
+              child: Image(image: AssetImage("assets/images/sellectedFav.png")),
             ),
 
             // Spacer(),

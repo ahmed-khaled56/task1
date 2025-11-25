@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_1/features/Profile/presentation/views/more_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/basket_view.dart';
+import 'package:task_1/features/fruits/presentaion/views/favourite_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
 
 class BasketLowerBar extends StatefulWidget {
@@ -63,7 +64,15 @@ class _BasketLowerBarState extends State<BasketLowerBar> {
 
             // Spacer(),
             Expanded(
-              child: Image(image: AssetImage("assets/images/IconBar4.png")),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FavouriteScreen()),
+                  );
+                },
+                child: Image(image: AssetImage("assets/images/IconBar4.png")),
+              ),
             ),
 
             // Spacer(),

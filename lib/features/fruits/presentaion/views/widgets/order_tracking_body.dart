@@ -36,18 +36,18 @@ class OrderTrackingBody extends StatelessWidget {
         // -------------------------
         Expanded(
           child: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(
-                left: MediaQuery.sizeOf(context).width * .066,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  trackingOrderInfo(),
-                  SizedBox(height: MediaQuery.sizeOf(context).height * .008),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                trackingOrderInfo(),
+                SizedBox(height: MediaQuery.sizeOf(context).height * .008),
 
-                  // list items as normal Column
-                  Column(
+                // list items as normal Column
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: MediaQuery.sizeOf(context).width * .066,
+                  ),
+                  child: Column(
                     children: List.generate(stages.length, (index) {
                       bool isActive = index >= stages.indexOf("Confirmed");
                       bool isLast = index == stages.length - 1;
@@ -60,42 +60,42 @@ class OrderTrackingBody extends StatelessWidget {
                       );
                     }),
                   ),
-                  SizedBox(height: MediaQuery.sizeOf(context).height * .04),
-                  CustomButton2(
-                    Textcolor: Colors.white,
-                    lable: "Confirm",
-                    buttoncolor: Color(0xff204F38),
-                    fontSize: getResponsiveFontSize(
-                      fontSize: 18,
-                      context: context,
-                    ),
-                    fontWeight: FontWeight.bold,
-                    onPressed: () {},
-                    hieght: MediaQuery.sizeOf(context).height * .0547,
-                    width: MediaQuery.sizeOf(context).width * .8069,
+                ),
+                SizedBox(height: MediaQuery.sizeOf(context).height * .04),
+                CustomButton2(
+                  Textcolor: Colors.white,
+                  lable: "Confirm",
+                  buttoncolor: Color(0xff204F38),
+                  fontSize: getResponsiveFontSize(
+                    fontSize: 18,
+                    context: context,
                   ),
+                  fontWeight: FontWeight.bold,
+                  onPressed: () {},
+                  hieght: MediaQuery.sizeOf(context).height * .0547,
+                  width: MediaQuery.sizeOf(context).width * .8069,
+                ),
 
-                  SizedBox(height: MediaQuery.sizeOf(context).height * .02),
+                SizedBox(height: MediaQuery.sizeOf(context).height * .02),
 
-                  CustomButton2(
-                    Textcolor: Colors.white,
-                    lable: "Cancel Order",
-                    buttoncolor: Color(0xffFF4A4A),
-                    fontSize: getResponsiveFontSize(
-                      fontSize: 18,
-                      context: context,
-                    ),
-                    fontWeight: FontWeight.bold,
-                    onPressed: () {
-                      CancelSheet(context);
-                    },
-
-                    hieght: MediaQuery.sizeOf(context).height * .0547,
-                    width: MediaQuery.sizeOf(context).width * .8069,
+                CustomButton2(
+                  Textcolor: Colors.white,
+                  lable: "Cancel Order",
+                  buttoncolor: Color(0xffFF4A4A),
+                  fontSize: getResponsiveFontSize(
+                    fontSize: 18,
+                    context: context,
                   ),
-                  SizedBox(height: MediaQuery.sizeOf(context).height * .04),
-                ],
-              ),
+                  fontWeight: FontWeight.bold,
+                  onPressed: () {
+                    CancelSheet(context);
+                  },
+
+                  hieght: MediaQuery.sizeOf(context).height * .0547,
+                  width: MediaQuery.sizeOf(context).width * .8069,
+                ),
+                SizedBox(height: MediaQuery.sizeOf(context).height * .04),
+              ],
             ),
           ),
         ),

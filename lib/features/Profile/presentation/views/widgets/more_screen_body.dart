@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
+import 'package:task_1/features/Profile/presentation/views/conditions_screen.dart';
 import 'package:task_1/features/Profile/presentation/views/contuct_screen.dart';
 import 'package:task_1/features/Profile/presentation/views/profile_screen.dart';
 import 'package:task_1/features/Profile/presentation/views/widgets/custom_listTile.dart';
@@ -46,6 +47,13 @@ class MoreScreenBody extends StatelessWidget {
         },
       ),
       cutomListTile(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ConditionsScreen()),
+          );
+        },
+
         iconLink: "assets/images/cond.png",
         title: "Terms & Conditions",
       ),
