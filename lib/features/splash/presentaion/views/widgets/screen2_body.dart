@@ -12,7 +12,14 @@ class Screen2Body extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * 0.08154),
-        custom_skip(),
+        custom_skip(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Screen3()),
+            );
+          },
+        ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.06545),
 
         Image(

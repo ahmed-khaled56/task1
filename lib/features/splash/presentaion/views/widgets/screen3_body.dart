@@ -12,7 +12,7 @@ class Screen3Body extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * 0.08154),
-        custom_skip(),
+        custom_skip(isNot: true),
         SizedBox(height: MediaQuery.of(context).size.height * 0.06545),
 
         Image(

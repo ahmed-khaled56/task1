@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/splash/presentaion/views/screen2.dart';
-import 'package:task_1/features/splash/presentaion/views/widgets/custom_button.dart';
 import 'package:task_1/features/splash/presentaion/views/widgets/Custom_skipe.dart';
+import 'package:task_1/features/splash/presentaion/views/widgets/custom_button.dart';
 
 class Screen1Body extends StatelessWidget {
   const Screen1Body({super.key});
@@ -10,24 +10,33 @@ class Screen1Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final orenationDiriction = MediaQuery.of(context).orientation;
-    print(orenationDiriction);
-
     final realHeight = size.height > size.width ? size.height : size.width;
     final realWidth = size.width < size.height ? size.width : size.height;
+
     return Column(
       children: [
-        SizedBox(height: realHeight * 0.04154),
-        custom_skip(),
-        SizedBox(height: realHeight * 0.06545),
+        Expanded(
+          child: SizedBox(height: MediaQuery.of(context).size.height * 0.08154),
+        ),
+        custom_skip(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Screen2()),
+            );
+          },
+        ),
+        Expanded(
+          child: SizedBox(height: MediaQuery.of(context).size.height * 0.06545),
+        ),
 
         Image(
           image: AssetImage("assets/images/screen1.png"),
 
-          height: realHeight * .2932,
-          width: realWidth * .6630,
+          height: MediaQuery.of(context).size.height * .2932,
+          width: MediaQuery.of(context).size.width * .6630,
         ),
-        SizedBox(height: realHeight * 0.02648),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.02648),
 
         Text(
           "E Shopping",
@@ -39,7 +48,7 @@ class Screen1Body extends StatelessWidget {
             color: Color(0xff2F2E41),
           ),
         ),
-        SizedBox(height: realHeight * 0.018),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.018),
         Text(
           "Explore op organic fruits & grab them",
 
@@ -50,28 +59,26 @@ class Screen1Body extends StatelessWidget {
             color: Color(0xff78787C),
           ),
         ),
-        SizedBox(height: realHeight * 0.056),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.056),
         Image(
           image: AssetImage("assets/images/dot.png"),
 
-          height: realHeight * .01287,
-          width: realWidth * .14418,
+          height: MediaQuery.of(context).size.height * .01287,
+          width: MediaQuery.of(context).size.width * .14418,
         ),
-        SizedBox(height: realHeight * 0.0933),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.0933),
         CustomButton(
-          lable: "Nexet",
+          lable: "Next",
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Screen2()),
+              MaterialPageRoute(builder: (context) => Screen2()),
             );
           },
         ),
-
         Expanded(
           child: SizedBox(height: MediaQuery.of(context).size.height * 0.197),
         ),
-        Expanded(child: SizedBox(height: realHeight * 0.197)),
       ],
     );
   }

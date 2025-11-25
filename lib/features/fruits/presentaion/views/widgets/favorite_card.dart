@@ -17,7 +17,7 @@ class FavoriteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .134,
+      height: MediaQuery.sizeOf(context).height * .144,
       width: MediaQuery.sizeOf(context).width * .94,
       child: Card(
         elevation: 5,
@@ -26,18 +26,21 @@ class FavoriteCard extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(
             left: MediaQuery.sizeOf(context).width * .03,
-            top: MediaQuery.sizeOf(context).height * .003,
+            top: MediaQuery.sizeOf(context).height * .007,
+            bottom: MediaQuery.sizeOf(context).height * .007,
             right: MediaQuery.sizeOf(context).width * .03,
           ),
           child: Row(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  "assets/images/productImage.png",
-                  width: MediaQuery.sizeOf(context).width * .2223,
-                  height: MediaQuery.sizeOf(context).height * .1033,
-                  fit: BoxFit.cover,
+              SizedBox(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    "assets/images/productImage.png",
+                    width: MediaQuery.sizeOf(context).width * .2223,
+                    height: MediaQuery.sizeOf(context).height * .1033,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
 
@@ -146,11 +149,11 @@ class FavoriteCard extends StatelessWidget {
                             ),
                           ),
 
-                          Expanded(
-                            child: SizedBox(
-                              width: MediaQuery.sizeOf(context).width * .09,
-                            ),
-                          ),
+                          // Expanded(
+                          //   child: SizedBox(
+                          //     width: MediaQuery.sizeOf(context).width * .09,
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),

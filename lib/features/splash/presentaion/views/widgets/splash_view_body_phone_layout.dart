@@ -18,7 +18,7 @@ class SplashViewBodyPhoneLayout extends StatelessWidget {
 
         SizedBox(
           width: w * .9,
-          height: isPortrait ? h * .2398 : h * 35,
+          height: isPortrait ? h * .2398 : h * 0.35,
           child: FittedBox(
             child: Image.asset(
               "assets/images/Group_2856.png",
@@ -29,10 +29,11 @@ class SplashViewBodyPhoneLayout extends StatelessWidget {
 
         SizedBox(height: isPortrait ? h * 0.12 : h * 0.04),
 
-        Expanded(
+        Flexible(
+          fit: FlexFit.tight,
           child: Image.asset(
             "assets/images/3434341.png",
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
             width: w,
           ),
         ),
