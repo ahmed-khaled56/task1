@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class CustomUpperbar extends StatelessWidget {
-  const CustomUpperbar({super.key, required this.title});
-  final String title;
+  const CustomUpperbar({super.key, @required this.title});
+  final String? title;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,11 +20,11 @@ class CustomUpperbar extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: Icon(Icons.arrow_back_ios),
+                child: Icon(Icons.arrow_back_ios, color: Colors.black),
               ),
               Spacer(),
               Text(
-                title,
+                title == null ? "" : title!,
                 style: TextStyle(
                   color: const Color(0xff204F38),
                   fontSize: getResponsiveFontSize(

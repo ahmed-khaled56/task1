@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:task_1/features/Profile/presentation/views/more_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/basket_view.dart';
+import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
 
-class OrderLowerBar extends StatefulWidget {
-  const OrderLowerBar({super.key});
+class MoreLowerBar extends StatefulWidget {
+  const MoreLowerBar({super.key});
 
   @override
-  State<OrderLowerBar> createState() => _OrderLowerBarState();
+  State<MoreLowerBar> createState() => _MoreLowerBarState();
 }
 
-class _OrderLowerBarState extends State<OrderLowerBar> {
+class _MoreLowerBarState extends State<MoreLowerBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +26,9 @@ class _OrderLowerBarState extends State<OrderLowerBar> {
       ),
 
       child: Padding(
-        padding: EdgeInsets.only(left: MediaQuery.sizeOf(context).width * 0.04),
+        padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.sizeOf(context).width * 0.02,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -43,22 +46,21 @@ class _OrderLowerBarState extends State<OrderLowerBar> {
             ),
             //  Spacer(),
             Expanded(
-              child: Image(
-                image: AssetImage("assets/images/selectedOrder.png"),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OrderScreen()),
+                  );
+                },
+
+                child: Image(image: AssetImage("assets/images/iconBar2.png")),
               ),
             ),
 
             //   Spacer(),
             Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => BasketView()),
-                  );
-                },
-                child: Image(image: AssetImage("assets/images/IconBar3.png")),
-              ),
+              child: Image(image: AssetImage("assets/images/IconBar3.png")),
             ),
 
             // Spacer(),
@@ -68,14 +70,8 @@ class _OrderLowerBarState extends State<OrderLowerBar> {
 
             // Spacer(),
             Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MoreScreen()),
-                  );
-                },
-                child: Image(image: AssetImage("assets/images/iconBar5.png")),
+              child: Image(
+                image: AssetImage("assets/images/sellectedMore.png"),
               ),
             ),
           ],

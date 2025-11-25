@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/features/fruits/presentaion/views/order_traking_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/order_card.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/order_tracking_body.dart';
 
 class OrderScreenBody extends StatelessWidget {
   const OrderScreenBody({super.key});
@@ -44,7 +46,7 @@ class OrderScreenBody extends StatelessWidget {
         orderId: "882610",
         date: "8 Sep",
         itemsCount: 3,
-        status: "Canceled",
+        status: "Working",
         statusColor: Color(0xff28B0E8),
         iconBgColor: Colors.red,
       ),
@@ -54,7 +56,7 @@ class OrderScreenBody extends StatelessWidget {
         orderId: "882610",
         date: "8 Sep",
         itemsCount: 3,
-        status: "Canceled",
+        status: "Delivered",
         statusColor: Color(0xff28B0E8),
         iconBgColor: Colors.red,
       ),
@@ -64,7 +66,7 @@ class OrderScreenBody extends StatelessWidget {
         orderId: "882610",
         date: "8 Sep",
         itemsCount: 3,
-        status: "Canceled",
+        status: "New",
         statusColor: Color(0xff28B0E8),
         iconBgColor: Colors.red,
       ),
@@ -80,7 +82,17 @@ class OrderScreenBody extends StatelessWidget {
             scrollDirection: Axis.vertical,
             itemCount: ordersList.length,
             itemBuilder: (context, index) {
-              return ordersList[index];
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OrderTrakingScreen(),
+                    ),
+                  );
+                },
+                child: ordersList[index],
+              );
             },
           ),
         ),

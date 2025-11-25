@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
-import 'package:flutter/material.dart';
-import 'package:task_1/cores/widgets/responsive_text_method.dart';
-
 class CustomRow extends StatelessWidget {
   const CustomRow({
     super.key,

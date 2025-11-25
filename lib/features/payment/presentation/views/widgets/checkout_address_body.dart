@@ -210,29 +210,22 @@ class _CheckoutAddressBodyState extends State<CheckoutAddressBody> {
           ),
         ),
 
-        SizedBox(height: MediaQuery.sizeOf(context).height * .15),
-        Padding(
-          padding: EdgeInsets.only(
-            //bottom: MediaQuery.sizeOf(context).height * 0.25,
-          ),
-          child: CustomButton2(
-            Textcolor: Colors.white,
+        SizedBox(height: MediaQuery.sizeOf(context).height * .12),
+        CustomButton2(
+          Textcolor: Colors.white,
 
-            lable: "Continue",
-            buttoncolor: Color(0xff204F38),
-            fontSize: getResponsiveFontSize(fontSize: 18, context: context),
-            fontWeight: FontWeight.bold,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CheckoutPaymentScreen(),
-                ),
-              );
-            },
-            hieght: MediaQuery.sizeOf(context).height * .0547,
-            width: MediaQuery.sizeOf(context).width * .8069,
-          ),
+          lable: "Continue",
+          buttoncolor: Color(0xff204F38),
+          fontSize: getResponsiveFontSize(fontSize: 18, context: context),
+          fontWeight: FontWeight.bold,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CheckoutPaymentScreen()),
+            );
+          },
+          hieght: MediaQuery.sizeOf(context).height * .0547,
+          width: MediaQuery.sizeOf(context).width * .8069,
         ),
         //   Expanded(child: SizedBox(height: MediaQuery.sizeOf(context).height)),
         // BasketLowerBar(),

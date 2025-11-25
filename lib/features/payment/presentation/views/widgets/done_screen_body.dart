@@ -12,7 +12,7 @@ class DoneScreenBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.sizeOf(context).width * .04,
+          // horizontal: MediaQuery.sizeOf(context).width * .04,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

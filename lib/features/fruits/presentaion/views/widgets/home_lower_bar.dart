@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/features/Profile/presentation/views/more_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/basket_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
@@ -66,7 +67,15 @@ class _LowerBarState extends State<LowerBar> {
 
             // Spacer(),
             Expanded(
-              child: Image(image: AssetImage("assets/images/iconBar5.png")),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MoreScreen()),
+                  );
+                },
+                child: Image(image: AssetImage("assets/images/iconBar5.png")),
+              ),
             ),
           ],
         ),
