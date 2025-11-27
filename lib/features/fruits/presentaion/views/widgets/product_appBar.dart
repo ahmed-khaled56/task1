@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class ProductAppbar extends StatefulWidget {
@@ -16,9 +17,9 @@ class _ProductAppbarState extends State<ProductAppbar> {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.sizeOf(context).width * .03,
-            right: MediaQuery.sizeOf(context).width * .03,
-            top: MediaQuery.sizeOf(context).height * .015,
+            left: portraitWidth(context) * .03,
+            right: portraitWidth(context) * .03,
+            top: portraitHeight(context) * .015,
           ),
           child: Row(
             children: [
@@ -59,7 +60,7 @@ class _ProductAppbarState extends State<ProductAppbar> {
                       : Icon(Icons.favorite_sharp, size: 30, color: Colors.red),
                 ),
               ),
-              SizedBox(width: MediaQuery.sizeOf(context).width * .04),
+              SizedBox(width: portraitWidth(context) * .04),
               GestureDetector(
                 onTap: () {},
                 child: GestureDetector(
@@ -74,11 +75,9 @@ class _ProductAppbarState extends State<ProductAppbar> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.sizeOf(context).height * .0066,
-          ),
+          padding: EdgeInsets.only(bottom: portraitHeight(context) * .0066),
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.001,
+            height: portraitHeight(context) * 0.001,
             width: MediaQuery.sizeOf(context).width,
             color: Color(0xffDEDFDF),
           ),

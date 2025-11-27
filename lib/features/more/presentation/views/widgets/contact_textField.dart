@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class ContactTextField extends StatelessWidget {
@@ -7,17 +8,13 @@ class ContactTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: MediaQuery.sizeOf(context).width * .08,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: portraitWidth(context) * .08),
       child: Column(
         children: [
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(
-                  right: MediaQuery.sizeOf(context).width * .02,
-                ),
+                padding: EdgeInsets.only(right: portraitWidth(context) * .02),
                 child: Text(
                   "Name",
                   style: TextStyle(
@@ -35,8 +32,8 @@ class ContactTextField extends StatelessWidget {
 
           Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.sizeOf(context).height * .0087,
-              bottom: MediaQuery.sizeOf(context).height * .0108,
+              top: portraitHeight(context) * .0087,
+              bottom: portraitHeight(context) * .0108,
             ),
             child: TextField(
               decoration: InputDecoration(
@@ -63,9 +60,7 @@ class ContactTextField extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(
-                  right: MediaQuery.sizeOf(context).width * .02,
-                ),
+                padding: EdgeInsets.only(right: portraitWidth(context) * .02),
                 child: Text(
                   "Mobile Number",
                   style: TextStyle(
@@ -83,8 +78,8 @@ class ContactTextField extends StatelessWidget {
 
           Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.sizeOf(context).height * .0087,
-              bottom: MediaQuery.sizeOf(context).height * .0108,
+              top: portraitHeight(context) * .0087,
+              bottom: portraitHeight(context) * .0108,
             ),
             child: TextField(
               decoration: InputDecoration(
@@ -112,9 +107,7 @@ class ContactTextField extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(
-                  right: MediaQuery.sizeOf(context).width * .02,
-                ),
+                padding: EdgeInsets.only(right: portraitWidth(context) * .02),
                 child: Text(
                   "Message",
                   style: TextStyle(
@@ -131,8 +124,8 @@ class ContactTextField extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.sizeOf(context).height * .00187,
-              bottom: MediaQuery.sizeOf(context).height * .0108,
+              top: portraitHeight(context) * .00187,
+              bottom: portraitHeight(context) * .0108,
             ),
             child: TextField(
               maxLines: 6,

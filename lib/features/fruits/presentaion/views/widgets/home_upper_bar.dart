@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/fruits/presentaion/views/search_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/filter_Sheet.dart';
@@ -13,9 +14,9 @@ class HomeUpperBar extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.sizeOf(context).width * .03,
-            right: MediaQuery.sizeOf(context).width * .03,
-            top: MediaQuery.sizeOf(context).height * .015,
+            left: portraitWidth(context) * .03,
+            right: portraitWidth(context) * .03,
+            top: portraitHeight(context) * .015,
           ),
           child: Row(
             children: [
@@ -46,7 +47,7 @@ class HomeUpperBar extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: MediaQuery.sizeOf(context).width * .04),
+              SizedBox(width: portraitWidth(context) * .04),
               GestureDetector(
                 onTap: () {
                   filterSheet(context);
@@ -60,11 +61,9 @@ class HomeUpperBar extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.sizeOf(context).height * .0146,
-          ),
+          padding: EdgeInsets.only(bottom: portraitHeight(context) * .0146),
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.001,
+            height: portraitHeight(context) * 0.001,
             width: MediaQuery.sizeOf(context).width,
             color: Color(0xffDEDFDF),
           ),

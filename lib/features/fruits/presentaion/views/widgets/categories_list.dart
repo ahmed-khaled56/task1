@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class CategoriesList extends StatefulWidget {
@@ -13,16 +14,7 @@ class CategoriesList extends StatefulWidget {
 
 class _CategoriesListState extends State<CategoriesList> {
   @override
-  double portraitWidth(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return size.width < size.height ? size.width : size.height;
-  }
-
-  double portraitHeight(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return size.height > size.width ? size.height : size.width;
-  }
-
+  @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.sizeOf(context).width;
 

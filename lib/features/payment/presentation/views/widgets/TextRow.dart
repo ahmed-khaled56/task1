@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class TextRow extends StatelessWidget {
@@ -21,8 +22,8 @@ class TextRow extends StatelessWidget {
       padding: EdgeInsets.only(
         top: toppadding,
         bottom: bottpadding ?? 0,
-        right: MediaQuery.sizeOf(context).width * .04186,
-        left: MediaQuery.sizeOf(context).width * .04186,
+        right: portraitWidth(context) * .04186,
+        left: portraitWidth(context) * .04186,
       ),
       child: Row(
         children: [

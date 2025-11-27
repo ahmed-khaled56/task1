@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class OrderCard extends StatelessWidget {
@@ -28,8 +29,11 @@ class OrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-      padding: const EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(
+        vertical: portraitHeight(context) * .00858,
+        horizontal: portraitWidth(context) * .0279,
+      ),
+      padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(14),
@@ -45,8 +49,8 @@ class OrderCard extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(
-                left: MediaQuery.sizeOf(context).width * .02,
-                right: MediaQuery.sizeOf(context).width * .07,
+                left: portraitWidth(context) * .02,
+                right: portraitWidth(context) * .07,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +66,7 @@ class OrderCard extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: MediaQuery.sizeOf(context).height * .001),
+                  SizedBox(height: portraitHeight(context) * .001),
 
                   Text(
                     "$date  •  $itemsCount items",
@@ -75,7 +79,7 @@ class OrderCard extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: MediaQuery.sizeOf(context).height * .002),
+                  SizedBox(height: portraitHeight(context) * .002),
 
                   Row(
                     children: [
@@ -109,8 +113,8 @@ class OrderCard extends StatelessWidget {
 
           /// RIGHT SIDE (icon)
           SizedBox(
-            height: MediaQuery.sizeOf(context).height * .0708,
-            width: MediaQuery.sizeOf(context).width * .1534,
+            height: portraitHeight(context) * .0708,
+            width: portraitWidth(context) * .1534,
             child: Image(image: AssetImage(iconLink)),
           ),
         ],

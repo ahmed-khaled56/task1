@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/custom_button.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/filter_options.dart';
 
 void CancelSheet(BuildContext context) {
   showDialog(
@@ -12,7 +12,7 @@ void CancelSheet(BuildContext context) {
         child: Material(
           color: Colors.transparent,
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.85,
+            width: portraitWidth(context) * 0.85,
 
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -25,8 +25,8 @@ void CancelSheet(BuildContext context) {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    top: MediaQuery.sizeOf(context).height * .0235,
-                    bottom: MediaQuery.sizeOf(context).height * .0233,
+                    top: portraitHeight(context) * .0235,
+                    bottom: portraitHeight(context) * .0233,
                   ),
 
                   child: Text(
@@ -45,7 +45,7 @@ void CancelSheet(BuildContext context) {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                        right: MediaQuery.sizeOf(context).width * .02,
+                        right: portraitWidth(context) * .02,
                       ),
                       child: Text(
                         "Reason",
@@ -64,8 +64,8 @@ void CancelSheet(BuildContext context) {
 
                 Padding(
                   padding: EdgeInsets.only(
-                    top: MediaQuery.sizeOf(context).height * .0087,
-                    bottom: MediaQuery.sizeOf(context).height * .0108,
+                    top: portraitHeight(context) * .0087,
+                    bottom: portraitHeight(context) * .0108,
                   ),
                   child: TextField(
                     decoration: InputDecoration(
@@ -93,7 +93,7 @@ void CancelSheet(BuildContext context) {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                        right: MediaQuery.sizeOf(context).width * .02,
+                        right: portraitWidth(context) * .02,
                       ),
                       child: Text(
                         "Notes",
@@ -111,8 +111,8 @@ void CancelSheet(BuildContext context) {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: MediaQuery.sizeOf(context).height * .00187,
-                    bottom: MediaQuery.sizeOf(context).height * .0108,
+                    top: portraitHeight(context) * .00187,
+                    bottom: portraitHeight(context) * .0108,
                   ),
                   child: TextField(
                     maxLines: 3,
@@ -141,8 +141,8 @@ void CancelSheet(BuildContext context) {
 
                 Padding(
                   padding: EdgeInsets.only(
-                    top: MediaQuery.sizeOf(context).height * .0087,
-                    bottom: MediaQuery.sizeOf(context).height * .0108,
+                    top: portraitHeight(context) * .0087,
+                    bottom: portraitHeight(context) * .0108,
                   ),
                   child: CustomButton2(
                     Textcolor: Colors.white,
@@ -155,8 +155,8 @@ void CancelSheet(BuildContext context) {
                       context: context,
                     ),
                     fontWeight: FontWeight.bold,
-                    hieght: MediaQuery.sizeOf(context).height * .045,
-                    width: MediaQuery.sizeOf(context).width * .567,
+                    hieght: portraitHeight(context) * .045,
+                    width: portraitWidth(context) * .567,
                   ),
                 ),
 

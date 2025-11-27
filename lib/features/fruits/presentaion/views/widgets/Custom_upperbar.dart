@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class CustomUpperbar extends StatelessWidget {
@@ -10,9 +11,9 @@ class CustomUpperbar extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.sizeOf(context).width * .03,
-            right: MediaQuery.sizeOf(context).width * .03,
-            top: MediaQuery.sizeOf(context).height * .015,
+            left: portraitWidth(context) * .03,
+            right: portraitWidth(context) * .03,
+            top: portraitHeight(context) * .015,
           ),
           child: Row(
             children: [
@@ -39,11 +40,9 @@ class CustomUpperbar extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.sizeOf(context).height * .0066,
-          ),
+          padding: EdgeInsets.only(bottom: portraitHeight(context) * .0066),
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.001,
+            height: portraitHeight(context) * 0.001,
             width: MediaQuery.sizeOf(context).width,
             color: Color(0xffDEDFDF),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/custom_button.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
@@ -31,22 +32,16 @@ class OrderTrackingBody extends StatelessWidget {
         CustomUpperbar(title: "Order Tracking"),
         SizedBox(height: MediaQuery.sizeOf(context).height * .008),
 
-        // -------------------------
-        //       SCROLL PART
-        // -------------------------
         Expanded(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 trackingOrderInfo(),
-                SizedBox(height: MediaQuery.sizeOf(context).height * .008),
+                SizedBox(height: portraitHeight(context) * .008),
 
-                // list items as normal Column
                 Padding(
-                  padding: EdgeInsets.only(
-                    left: MediaQuery.sizeOf(context).width * .066,
-                  ),
+                  padding: EdgeInsets.only(left: portraitWidth(context) * .066),
                   child: Column(
                     children: List.generate(stages.length, (index) {
                       bool isActive = index >= stages.indexOf("Confirmed");
@@ -61,7 +56,7 @@ class OrderTrackingBody extends StatelessWidget {
                     }),
                   ),
                 ),
-                SizedBox(height: MediaQuery.sizeOf(context).height * .04),
+                SizedBox(height: portraitHeight(context) * .04),
                 CustomButton2(
                   Textcolor: Colors.white,
                   lable: "Confirm",
@@ -72,11 +67,11 @@ class OrderTrackingBody extends StatelessWidget {
                   ),
                   fontWeight: FontWeight.bold,
                   onPressed: () {},
-                  hieght: MediaQuery.sizeOf(context).height * .0547,
-                  width: MediaQuery.sizeOf(context).width * .8069,
+                  hieght: portraitHeight(context) * .0547,
+                  width: portraitWidth(context) * .8069,
                 ),
 
-                SizedBox(height: MediaQuery.sizeOf(context).height * .02),
+                SizedBox(height: portraitHeight(context) * .02),
 
                 CustomButton2(
                   Textcolor: Colors.white,
@@ -91,10 +86,10 @@ class OrderTrackingBody extends StatelessWidget {
                     CancelSheet(context);
                   },
 
-                  hieght: MediaQuery.sizeOf(context).height * .0547,
-                  width: MediaQuery.sizeOf(context).width * .8069,
+                  hieght: portraitHeight(context) * .0547,
+                  width: portraitWidth(context) * .8069,
                 ),
-                SizedBox(height: MediaQuery.sizeOf(context).height * .04),
+                SizedBox(height: portraitHeight(context) * .04),
               ],
             ),
           ),

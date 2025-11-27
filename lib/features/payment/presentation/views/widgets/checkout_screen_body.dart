@@ -17,6 +17,7 @@ class CheckoutScreenBody extends StatefulWidget {
 class _CheckoutScreenBodyState extends State<CheckoutScreenBody> {
   @override
   int curentIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [

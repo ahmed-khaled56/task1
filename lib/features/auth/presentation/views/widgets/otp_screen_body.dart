@@ -25,6 +25,7 @@ class _OtpScreenBodyState extends State<OtpScreenBody> {
     return size.height > size.width ? size.height : size.width;
   }
 
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(

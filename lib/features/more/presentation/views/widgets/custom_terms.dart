@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class CustomTerms extends StatelessWidget {
@@ -8,11 +9,11 @@ class CustomTerms extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: MediaQuery.sizeOf(context).width * .04,
+        left: portraitWidth(context) * .04,
 
-        right: MediaQuery.sizeOf(context).width * .05,
-        bottom: MediaQuery.sizeOf(context).height * .03,
-        top: MediaQuery.sizeOf(context).height * .01,
+        right: portraitWidth(context) * .05,
+        bottom: portraitHeight(context) * .03,
+        top: portraitHeight(context) * .01,
       ),
       child: Text(
         text,

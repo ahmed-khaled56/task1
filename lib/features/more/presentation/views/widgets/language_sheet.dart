@@ -6,7 +6,7 @@ import 'package:task_1/features/fruits/presentaion/views/widgets/filter_options.
 
 bool option1 = false;
 bool option2 = false;
-void filterSheet(BuildContext context) {
+void LanguageSheet(BuildContext context) {
   showDialog(
     context: context,
     barrierDismissible: true,
@@ -17,7 +17,7 @@ void filterSheet(BuildContext context) {
             child: Material(
               color: Colors.transparent,
               child: Container(
-                width: portraitWidth(context) * 0.82,
+                width: MediaQuery.of(context).size.width * 0.82,
 
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -30,75 +30,7 @@ void filterSheet(BuildContext context) {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                        top: portraitHeight(context) * .0235,
-                        bottom: portraitHeight(context) * .0233,
-                      ),
-
-                      child: Text(
-                        "Filter by",
-                        style: TextStyle(
-                          color: Color(0xff292727),
-                          fontSize: getResponsiveFontSize(
-                            fontSize: 18,
-                            context: context,
-                          ),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                            right: portraitWidth(context) * .02,
-                          ),
-                          child: Text(
-                            "Delivered To",
-                            style: TextStyle(
-                              color: Color(0xff858D9A),
-                              fontSize: getResponsiveFontSize(
-                                fontSize: 14,
-                                context: context,
-                              ),
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ),
-                        Image(image: AssetImage("assets/images/motor.png")),
-                      ],
-                    ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: portraitHeight(context) * .0187,
-                        bottom: portraitWidth(context) * .0108,
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: 1,
-                            horizontal: 8,
-                          ),
-                          hintText: "All Areas",
-                          prefixIcon: Icon(Icons.keyboard_arrow_down),
-                          hintStyle: TextStyle(
-                            fontSize: getResponsiveFontSize(
-                              fontSize: 14,
-                              context: context,
-                            ),
-                            fontWeight: FontWeight.normal,
-                            color: Colors.black,
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                        bottom: portraitHeight(context) * .014,
+                        bottom: MediaQuery.sizeOf(context).height * .014,
                       ),
                       child: CircleCheckItem(
                         isChecked: option1,
@@ -108,29 +40,30 @@ void filterSheet(BuildContext context) {
                             option2 = false;
                           });
                         },
-
-                        label: "offers",
+                        flag: "assets/images/arab.png",
+                        label: "العربية",
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                        bottom: portraitHeight(context) * .0243,
+                        bottom: MediaQuery.sizeOf(context).height * .0243,
                       ),
                       child: CircleCheckItem(
                         isChecked: option2,
                         onChanged: (value) {
                           setState(() {
                             option2 = true;
-                            option1 = false;
+                            option1 = false; // lock first
                           });
                         },
-                        label: "Free Delivery",
+                        flag: "assets/images/eng.png",
+                        label: "English",
                       ),
                     ),
 
                     Padding(
                       padding: EdgeInsets.only(
-                        bottom: portraitHeight(context) * .0249,
+                        bottom: MediaQuery.sizeOf(context).height * .0249,
                       ),
                       child: CustomButton2(
                         Textcolor: Colors.white,

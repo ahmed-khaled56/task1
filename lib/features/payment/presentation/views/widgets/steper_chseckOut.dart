@@ -27,6 +27,7 @@ class SteperCheckout extends StatefulWidget {
 class _SteperCheckoutState extends State<SteperCheckout> {
   @override
   int currentStep = 0;
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [

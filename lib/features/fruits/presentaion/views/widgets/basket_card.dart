@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class BasketItemCard extends StatelessWidget {
@@ -17,17 +18,17 @@ class BasketItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .134,
-      width: MediaQuery.sizeOf(context).width * .9,
+      height: portraitHeight(context) * .134,
+      width: portraitWidth(context) * .9,
       child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: Colors.white,
         child: Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.sizeOf(context).width * .06,
-            top: MediaQuery.sizeOf(context).height * .003,
-            right: MediaQuery.sizeOf(context).width * .03,
+            left: portraitWidth(context) * .06,
+            top: portraitHeight(context) * .003,
+            right: portraitWidth(context) * .03,
           ),
           child: Row(
             children: [
@@ -35,13 +36,13 @@ class BasketItemCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
                   "assets/images/productImage.png",
-                  width: MediaQuery.sizeOf(context).width * .2023,
-                  height: MediaQuery.sizeOf(context).height * .0933,
+                  width: portraitWidth(context) * .2023,
+                  height: portraitHeight(context) * .0933,
                   fit: BoxFit.cover,
                 ),
               ),
 
-              SizedBox(width: MediaQuery.sizeOf(context).width * .04),
+              SizedBox(width: portraitWidth(context) * .04),
 
               // PRODUCT TEXTS
               Expanded(
@@ -104,11 +105,8 @@ class BasketItemCard extends StatelessWidget {
                           note != null
                               ? Expanded(
                                   child: Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * .237,
-                                    height:
-                                        MediaQuery.sizeOf(context).height *
-                                        .0236,
+                                    width: portraitWidth(context) * .237,
+                                    height: portraitHeight(context) * .0236,
                                     decoration: BoxDecoration(
                                       color: const Color(0xffDF958F),
                                       borderRadius: BorderRadius.circular(15),
@@ -134,14 +132,14 @@ class BasketItemCard extends StatelessWidget {
 
                           Expanded(
                             child: SizedBox(
-                              width: MediaQuery.sizeOf(context).width * .09,
+                              width: portraitWidth(context) * .09,
                             ),
                           ),
 
                           Expanded(
                             child: Container(
-                              height: MediaQuery.sizeOf(context).height * .0293,
-                              width: MediaQuery.sizeOf(context).width * .275,
+                              height: portraitHeight(context) * .0293,
+                              width: portraitWidth(context) * .275,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 border: Border.all(

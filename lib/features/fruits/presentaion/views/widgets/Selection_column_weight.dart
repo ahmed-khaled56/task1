@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/product_selection.dart';
 
@@ -25,10 +26,10 @@ class SelectionColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: MediaQuery.sizeOf(context).height * .0265,
+        top: portraitHeight(context) * .0265,
         //right: MediaQuery.sizeOf(context).width * .188,
-        left: MediaQuery.sizeOf(context).width * .0488,
-        right: MediaQuery.sizeOf(context).width * .0488,
+        left: portraitWidth(context) * .0488,
+        right: portraitWidth(context) * .0488,
       ),
       child: Column(
         children: [
@@ -67,12 +68,10 @@ class SelectionColumn extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.sizeOf(context).height * .0096,
-            ),
+            padding: EdgeInsets.only(bottom: portraitHeight(context) * .0096),
             child: Center(
               child: Container(
-                height: MediaQuery.sizeOf(context).height * 0.001,
+                height: portraitHeight(context) * 0.001,
                 width: MediaQuery.sizeOf(context).width,
                 color: Color(0xffD9D9D9),
               ),
@@ -90,7 +89,7 @@ class SelectionColumn extends StatelessWidget {
                       ),
                   ],
                 )
-              : SizedBox(height: MediaQuery.sizeOf(context).height * .001),
+              : SizedBox(height: portraitHeight(context) * .001),
         ],
       ),
     );

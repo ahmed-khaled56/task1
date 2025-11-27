@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class cutomListTile extends StatelessWidget {
@@ -21,13 +22,11 @@ class cutomListTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.sizeOf(context).width * .02,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: portraitWidth(context) * .02),
         child: ListTile(
           leading: iconLink != null
               ? Image.asset(
-                  color: color == null ? Color(0xff204F38) : color,
+                  color: color ?? Color(0xff204F38),
                   iconLink!,
                   width: 20,
                   height: 23,

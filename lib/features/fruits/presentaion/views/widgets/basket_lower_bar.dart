@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_1/features/Profile/presentation/views/more_screen.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
+import 'package:task_1/features/more/presentation/views/more_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
-import 'package:task_1/features/fruits/presentaion/views/basket_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/favourite_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
 
@@ -16,8 +16,8 @@ class _BasketLowerBarState extends State<BasketLowerBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width,
-      height: MediaQuery.sizeOf(context).height * 0.067596,
+      width: portraitWidth(context),
+      height: portraitHeight(context) * 0.067596,
       decoration: BoxDecoration(
         color: Color(0xff204F38),
         borderRadius: const BorderRadius.only(

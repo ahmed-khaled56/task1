@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 
 class SocialRow extends StatelessWidget {
   const SocialRow({super.key});
@@ -26,11 +27,11 @@ class SocialRow extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.only(
-                      left: MediaQuery.sizeOf(context).width * .015,
+                      left: portraitWidth(context) * .015,
                     ),
                     child: Image(
-                      height: MediaQuery.sizeOf(context).height * 0.216,
-                      width: MediaQuery.sizeOf(context).width * 0.15,
+                      height: portraitHeight(context) * 0.216,
+                      width: portraitWidth(context) * 0.15,
 
                       image: AssetImage(linKs[index]),
                     ),

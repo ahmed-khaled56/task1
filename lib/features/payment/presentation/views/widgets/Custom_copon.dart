@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
-import 'package:task_1/features/auth/presentation/views/widgets/custom_button.dart';
 
 class customCopon extends StatelessWidget {
   const customCopon({super.key});

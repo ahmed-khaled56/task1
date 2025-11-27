@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/basket_card.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/basket_lower_bar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/basket_screen_body.dart';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class FavoriteCard extends StatelessWidget {
@@ -17,18 +18,18 @@ class FavoriteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .144,
-      width: MediaQuery.sizeOf(context).width * .94,
+      height: portraitHeight(context) * .144,
+      width: portraitWidth(context) * .94,
       child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: Colors.white,
         child: Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.sizeOf(context).width * .03,
-            top: MediaQuery.sizeOf(context).height * .007,
-            bottom: MediaQuery.sizeOf(context).height * .007,
-            right: MediaQuery.sizeOf(context).width * .03,
+            left: portraitWidth(context) * .03,
+            top: portraitHeight(context) * .007,
+            bottom: portraitHeight(context) * .007,
+            right: portraitWidth(context) * .03,
           ),
           child: Row(
             children: [
@@ -37,14 +38,14 @@ class FavoriteCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
                     "assets/images/productImage.png",
-                    width: MediaQuery.sizeOf(context).width * .2223,
-                    height: MediaQuery.sizeOf(context).height * .1033,
+                    width: portraitWidth(context) * .2223,
+                    height: portraitHeight(context) * .1033,
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
 
-              SizedBox(width: MediaQuery.sizeOf(context).width * .05),
+              SizedBox(width: portraitWidth(context) * .05),
 
               // PRODUCT TEXTS
               Expanded(
@@ -148,12 +149,6 @@ class FavoriteCard extends StatelessWidget {
                               ),
                             ),
                           ),
-
-                          // Expanded(
-                          //   child: SizedBox(
-                          //     width: MediaQuery.sizeOf(context).width * .09,
-                          //   ),
-                          // ),
                         ],
                       ),
                     ),

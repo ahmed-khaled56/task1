@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_1/features/Profile/presentation/views/widgets/custom_terms.dart';
+import 'package:task_1/features/more/presentation/views/widgets/custom_terms.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 
 class ConditionBody extends StatelessWidget {

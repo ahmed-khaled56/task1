@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
-class CircleCheckItem extends StatefulWidget {
+class CircleCheckItem extends StatelessWidget {
   final String label;
   final String? flag;
+  final bool isChecked;
+  final Function(bool) onChanged;
 
-  const CircleCheckItem({super.key, required this.label, @required this.flag});
+  const CircleCheckItem({
+    super.key,
+    required this.label,
+    @required this.flag,
+    required this.isChecked,
+    required this.onChanged,
+  });
 
-  @override
-  State<CircleCheckItem> createState() => _CircleCheckItemState();
-}
+  // bool isChecked1 = false;
 
-class _CircleCheckItemState extends State<CircleCheckItem> {
-  bool isChecked = false;
+  //   bool isChecked2 = false;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        setState(() {
-          isChecked = !isChecked;
-        });
-      },
+      onTap: () => onChanged(!isChecked),
       child: Row(
         children: [
           Container(
@@ -38,17 +40,17 @@ class _CircleCheckItemState extends State<CircleCheckItem> {
                 ? Icon(Icons.check, size: 16, color: Color(0xff204F38))
                 : null,
           ),
-          widget.flag == null
+          flag == null
               ? SizedBox(width: 10)
               : Padding(
                   padding: EdgeInsets.only(
-                    left: MediaQuery.sizeOf(context).width * .035,
-                    right: MediaQuery.sizeOf(context).width * .02,
+                    left: portraitWidth(context) * .035,
+                    right: portraitWidth(context) * .02,
                   ),
-                  child: Image(image: AssetImage(widget.flag!)),
+                  child: Image(image: AssetImage(flag!)),
                 ),
           Text(
-            widget.label,
+            label,
             style: TextStyle(
               fontWeight: FontWeight.normal,
               fontSize: getResponsiveFontSize(fontSize: 16, context: context),

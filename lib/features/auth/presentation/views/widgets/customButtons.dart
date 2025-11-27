@@ -20,6 +20,7 @@ class _CustomButtonsState extends State<CustomButtons> {
     return size.height > size.width ? size.height : size.width;
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [

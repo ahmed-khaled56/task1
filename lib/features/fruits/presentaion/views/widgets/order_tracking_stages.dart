@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class OrderTrackingStep extends StatelessWidget {
@@ -44,7 +45,7 @@ class OrderTrackingStep extends StatelessWidget {
         context,
         subtitle!,
         subtitleStyle,
-        MediaQuery.sizeOf(context).width * .55,
+        portraitWidth(context) * .55,
       );
 
       extraLine = h - 20;
@@ -57,8 +58,8 @@ class OrderTrackingStep extends StatelessWidget {
         Column(
           children: [
             Container(
-              width: MediaQuery.sizeOf(context).width * .06976,
-              height: MediaQuery.sizeOf(context).height * .03045,
+              width: portraitWidth(context) * .06976,
+              height: portraitHeight(context) * .03045,
               decoration: BoxDecoration(
                 color: isActive ? const Color(0xff00BB1A) : Colors.white,
                 border: Border.all(color: const Color(0xff00BB1A), width: 2),
@@ -75,7 +76,7 @@ class OrderTrackingStep extends StatelessWidget {
           ],
         ),
 
-        SizedBox(width: MediaQuery.sizeOf(context).width * .05045),
+        SizedBox(width: portraitWidth(context) * .05045),
 
         Expanded(
           child: Column(

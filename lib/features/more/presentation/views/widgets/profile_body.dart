@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
-import 'package:task_1/features/Profile/presentation/views/widgets/customImage.dart';
-import 'package:task_1/features/Profile/presentation/views/widgets/custom_createProfile.dart';
+import 'package:task_1/features/more/presentation/views/widgets/customImage.dart';
+import 'package:task_1/features/more/presentation/views/widgets/custom_createProfile.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/custom_button.dart';
-import 'package:task_1/features/auth/presentation/views/widgets/custom_text_feild.dart';
-import 'package:task_1/features/auth/presentation/views/widgets/very_custom_textField.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 
 class ProfileBody extends StatefulWidget {
   const ProfileBody({super.key});
@@ -30,16 +28,16 @@ class _ProfileBodyState extends State<ProfileBody> {
               },
               child: Padding(
                 padding: EdgeInsets.only(
-                  top: MediaQuery.sizeOf(context).height * 0.01697,
-                  left: MediaQuery.sizeOf(context).width * 0.0953,
+                  top: portraitHeight(context) * 0.01697,
+                  left: portraitWidth(context) * 0.0953,
                 ),
                 child: Icon(Icons.arrow_back_ios, color: Colors.black),
               ),
             ),
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * .02),
+          SizedBox(height: portraitHeight(context) * .02),
           customProfileImage(),
-          SizedBox(height: MediaQuery.sizeOf(context).height * .01),
+          SizedBox(height: portraitHeight(context) * .01),
           Text(
             "Welcome, Ahmed",
             style: TextStyle(
@@ -48,17 +46,17 @@ class _ProfileBodyState extends State<ProfileBody> {
               color: Colors.black,
             ),
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * .02),
+          SizedBox(height: portraitHeight(context) * .02),
           createProfileBody(),
-          SizedBox(height: MediaQuery.sizeOf(context).height * 00.04399),
+          SizedBox(height: portraitHeight(context) * 00.04399),
           Center(
             child: CustomButton2(
               fontWeight: FontWeight.bold,
 
               fontSize: 18,
 
-              width: MediaQuery.sizeOf(context).width * 0.80697,
-              hieght: MediaQuery.sizeOf(context).height * 00.0536,
+              width: portraitWidth(context) * 0.80697,
+              hieght: portraitHeight(context) * 00.0536,
               lable: "Update",
               Textcolor: Colors.white,
               onPressed: () {
@@ -76,7 +74,7 @@ class _ProfileBodyState extends State<ProfileBody> {
               buttoncolor: Color(0xff204F38),
             ),
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * 00.0418),
+          SizedBox(height: portraitHeight(context) * 00.0418),
         ],
       ),
     );

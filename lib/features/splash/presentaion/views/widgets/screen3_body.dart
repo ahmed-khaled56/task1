@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/auth/presentation/views/login_screen.dart';
 import 'package:task_1/features/splash/presentaion/views/widgets/custom_button.dart';
@@ -9,62 +10,62 @@ class Screen3Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: MediaQuery.of(context).size.height * 0.08154),
-        custom_skip(isNot: true),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.06545),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(height: portraitHeight(context) * 0.08154),
+          custom_skip(isNot: true),
+          SizedBox(height: portraitHeight(context) * 0.06545),
 
-        Image(
-          image: AssetImage("assets/images/screen1.png"),
+          Image(
+            image: AssetImage("assets/images/screen1.png"),
 
-          height: MediaQuery.of(context).size.height * .2932,
-          width: MediaQuery.of(context).size.width * .6630,
-        ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.02648),
-
-        Text(
-          "Delivery Arrived",
-
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: getResponsiveFontSize(fontSize: 22, context: context),
-
-            color: Color(0xff2F2E41),
+            height: portraitHeight(context) * .2932,
+            width: portraitWidth(context) * .6630,
           ),
-        ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.018),
-        Text(
-          "Order is arrived at your Place",
+          SizedBox(height: portraitHeight(context) * 0.02648),
 
-          style: TextStyle(
-            fontWeight: FontWeight.normal,
-            fontSize: getResponsiveFontSize(fontSize: 17, context: context),
+          Text(
+            "Delivery Arrived",
 
-            color: Color(0xff78787C),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: getResponsiveFontSize(fontSize: 22, context: context),
+
+              color: Color(0xff2F2E41),
+            ),
           ),
-        ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.056),
-        Image(
-          image: AssetImage("assets/images/dot.png"),
+          SizedBox(height: portraitHeight(context) * 0.018),
+          Text(
+            "Order is arrived at your Place",
 
-          height: MediaQuery.of(context).size.height * .01287,
-          width: MediaQuery.of(context).size.width * .14418,
-        ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.0933),
-        CustomButton(
-          lable: "Get Started",
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => LoginScreen()),
-            );
-          },
-        ),
-        Expanded(
-          child: SizedBox(height: MediaQuery.of(context).size.height * 0.197),
-        ),
-      ],
+            style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: getResponsiveFontSize(fontSize: 17, context: context),
+
+              color: Color(0xff78787C),
+            ),
+          ),
+          SizedBox(height: portraitHeight(context) * 0.056),
+          Image(
+            image: AssetImage("assets/images/dot.png"),
+
+            height: portraitHeight(context) * .01287,
+            width: portraitWidth(context) * .14418,
+          ),
+          SizedBox(height: portraitHeight(context) * 0.0933),
+          CustomButton(
+            lable: "Get Started",
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginScreen()),
+              );
+            },
+          ),
+          SizedBox(height: portraitHeight(context) * 0.197),
+        ],
+      ),
     );
   }
 }

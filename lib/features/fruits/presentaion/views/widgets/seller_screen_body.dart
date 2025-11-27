@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/fruits/presentaion/views/product_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/search_screen.dart';
@@ -48,164 +49,162 @@ List<ProductCard> productsCardsList = [
 
 class _SellerScreenBodyState extends State<SellerScreenBody> {
   @override
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                left: MediaQuery.sizeOf(context).width * .03,
-                right: MediaQuery.sizeOf(context).width * .03,
-                top: MediaQuery.sizeOf(context).height * .015,
-              ),
-              child: Row(
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Icon(Icons.arrow_back_ios),
-                  ),
-                  Spacer(),
-                  Text(
-                    'Fruit Market',
-                    style: TextStyle(
-                      color: const Color(0xff204F38),
-                      fontSize: getResponsiveFontSize(
-                        fontSize: 24,
-                        context: context,
-                      ),
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: portraitWidth(context) * .03,
+                      right: portraitWidth(context) * .03,
+                      top: portraitHeight(context) * .015,
+                    ),
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(Icons.arrow_back_ios),
+                        ),
+                        Spacer(),
+                        Text(
+                          'Fruit Market',
+                          style: TextStyle(
+                            color: const Color(0xff204F38),
+                            fontSize: getResponsiveFontSize(
+                              fontSize: 24,
+                              context: context,
+                            ),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const Spacer(),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isPressed = true;
+                            });
+                          },
+                          child: const Image(
+                            image: AssetImage("assets/images/search.png"),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  const Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SearchScreen()),
-                      );
-                    },
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isPressed = true;
-                        });
-                      },
-
-                      child: const Image(
-                        image: AssetImage("assets/images/search.png"),
-                      ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      bottom: portraitHeight(context) * .0066,
+                    ),
+                    child: Container(
+                      height: portraitHeight(context) * 0.001,
+                      width: MediaQuery.sizeOf(context).width,
+                      color: Color(0xffDEDFDF),
                     ),
                   ),
-                  SizedBox(width: MediaQuery.sizeOf(context).width * .04),
                 ],
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                bottom: MediaQuery.sizeOf(context).height * .0066,
-              ),
-              child: Container(
-                height: MediaQuery.sizeOf(context).height * 0.001,
-                width: MediaQuery.sizeOf(context).width,
-                color: Color(0xffDEDFDF),
-              ),
-            ),
-          ],
-        ),
 
-        isPressed == false
-            ? SellerCard(
-                sellerName: widget.customSellerCard!.sellerName,
-                icon: widget.customSellerCard!.icon,
-                openClosd: widget.customSellerCard!.openClosd,
-                rate: widget.customSellerCard!.rate,
-                imageLink: widget.customSellerCard!.imageLink,
+              isPressed == false
+                  ? SellerCard(
+                      sellerName: widget.customSellerCard!.sellerName,
+                      icon: widget.customSellerCard!.icon,
+                      openClosd: widget.customSellerCard!.openClosd,
+                      rate: widget.customSellerCard!.rate,
+                      imageLink: widget.customSellerCard!.imageLink,
+                      timeDelev: "40 to 60 Min",
+                    )
+                  : CustomSearchTextfield(),
 
-                timeDelev: "40 to 60 Min",
-              )
-            : CustomSearchTextfield(),
-        Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: MediaQuery.sizeOf(context).height * .01,
-                left: MediaQuery.sizeOf(context).width * .0488,
-              ),
-              child: Text(
-                "Categories",
-
-                style: TextStyle(
-                  color: Color(0xff292727),
-                  fontSize: getResponsiveFontSize(
-                    fontSize: 18,
-                    context: context,
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: portraitHeight(context) * .01,
+                      left: portraitWidth(context) * .0488,
+                    ),
+                    child: Text(
+                      "Categories",
+                      style: TextStyle(
+                        color: Color(0xff292727),
+                        fontSize: getResponsiveFontSize(
+                          fontSize: 18,
+                          context: context,
+                        ),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                  fontWeight: FontWeight.bold,
+                ],
+              ),
+
+              Center(
+                child: SizedBox(
+                  width: portraitWidth(context) * 0.9,
+                  child: CategoriesList(
+                    namesList: ["Fruits", "Vegetables", "Phone", "Pets"],
+                    lisnksLIst: [
+                      "assets/images/fruits.png",
+                      "assets/images/vegta.png",
+                      "assets/images/phone.png",
+                      "assets/images/pets.png",
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-        CategoriesList(
-          namesList: ["Fruits", "Vegetables", "Phone", "Pets"],
-          lisnksLIst: [
-            "assets/images/fruits.png",
-            "assets/images/vegta.png",
 
-            "assets/images/phone.png",
-            "assets/images/pets.png",
-          ],
-        ),
-
-        Padding(
-          padding: EdgeInsets.only(
-            left: MediaQuery.sizeOf(context).width * .0488,
-            right: MediaQuery.sizeOf(context).width * .0488,
-          ),
-          child: Row(
-            children: [
-              Text(
-                "Products",
-
-                style: TextStyle(
-                  color: Color(0xff292727),
-                  fontSize: getResponsiveFontSize(
-                    fontSize: 18,
-                    context: context,
-                  ),
-                  fontWeight: FontWeight.bold,
+              Padding(
+                padding: EdgeInsets.only(
+                  left: portraitWidth(context) * .0488,
+                  right: portraitWidth(context) * .0488,
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      "Products",
+                      style: TextStyle(
+                        color: Color(0xff292727),
+                        fontSize: getResponsiveFontSize(
+                          fontSize: 18,
+                          context: context,
+                        ),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Spacer(),
+                    Image(image: AssetImage("assets/images/reorderIcon.png")),
+                  ],
                 ),
               ),
-              Spacer(),
-              Image(image: AssetImage("assets/images/reorderIcon.png")),
             ],
           ),
         ),
 
-        Expanded(
-          child: ListView.builder(
-            itemCount: productsCardsList.length,
-            scrollDirection: Axis.vertical,
-
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          ProductScreen(productCard: productsCardsList[index]),
-                    ),
-                  );
-                },
-                child: productsCardsList[index],
-              );
-            },
-          ),
+        /// ---------------------
+        ///   PRODUCTS SLIVER LIST
+        /// ---------------------
+        SliverList(
+          delegate: SliverChildBuilderDelegate((context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ProductScreen(productCard: productsCardsList[index]),
+                  ),
+                );
+              },
+              child: productsCardsList[index],
+            );
+          }, childCount: productsCardsList.length),
         ),
       ],
     );

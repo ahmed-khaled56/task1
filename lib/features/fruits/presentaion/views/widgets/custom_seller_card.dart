@@ -39,6 +39,7 @@ class _CustomSellerCardState extends State<CustomSellerCard> {
     return size.height > size.width ? size.height : size.width;
   }
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(

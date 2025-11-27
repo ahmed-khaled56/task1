@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:task_1/features/fruits/presentaion/views/order_traking_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/order_card.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/order_tracking_body.dart';
 
 class OrderScreenBody extends StatelessWidget {
   const OrderScreenBody({super.key});

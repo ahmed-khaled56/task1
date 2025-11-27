@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class custom_skip extends StatelessWidget {
@@ -26,13 +27,10 @@ class custom_skip extends StatelessWidget {
             alignment: Alignment.topRight,
 
             child: Padding(
-              padding: EdgeInsets.only(right: realWidth * 0.086),
+              padding: EdgeInsets.only(right: portraitWidth(context) * 0.086),
               child: Text(
                 "Skip",
                 style: TextStyle(
-                  // decoration: TextDecoration.underline,
-                  // decorationColor: Colors.grey[700], // لون الخط
-                  // decorationThickness: 2,
                   color: isNot! ? Colors.white : Color(0xff656565),
                   fontSize: getResponsiveFontSize(
                     fontSize: 14,
@@ -42,15 +40,15 @@ class custom_skip extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 2),
+          SizedBox(height: portraitHeight(context) * .00214),
 
           Align(
             alignment: Alignment.topRight,
             child: Padding(
-              padding: EdgeInsets.only(right: realWidth * 0.08139),
+              padding: EdgeInsets.only(right: portraitWidth(context) * 0.08139),
               child: Container(
-                width: realWidth * 0.07511,
-                height: realHeight * .001,
+                width: portraitWidth(context) * 0.07511,
+                height: portraitHeight(context) * .001,
                 color: isNot! ? Colors.white : Color(0xff656565),
                 margin: EdgeInsets.only(top: realHeight * .00429),
               ),

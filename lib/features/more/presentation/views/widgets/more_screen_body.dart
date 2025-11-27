@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
-import 'package:task_1/features/Profile/presentation/views/conditions_screen.dart';
-import 'package:task_1/features/Profile/presentation/views/contuct_screen.dart';
-import 'package:task_1/features/Profile/presentation/views/profile_screen.dart';
-import 'package:task_1/features/Profile/presentation/views/widgets/custom_listTile.dart';
-import 'package:task_1/features/Profile/presentation/views/widgets/language_sheet.dart';
+import 'package:task_1/features/more/presentation/views/conditions_screen.dart';
+import 'package:task_1/features/more/presentation/views/contuct_screen.dart';
+import 'package:task_1/features/more/presentation/views/profile_screen.dart';
+import 'package:task_1/features/more/presentation/views/widgets/custom_listTile.dart';
+import 'package:task_1/features/more/presentation/views/widgets/language_sheet.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/custom_button.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 
@@ -65,10 +66,10 @@ class MoreScreenBody extends StatelessWidget {
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomUpperbar(title: "Fruit Market"),
-          SizedBox(height: MediaQuery.sizeOf(context).height * .04),
+          SizedBox(height: portraitHeight(context) * .04),
           Container(
-            width: MediaQuery.sizeOf(context).width * .2,
-            height: MediaQuery.sizeOf(context).height * .09656,
+            width: portraitWidth(context) * .2,
+            height: portraitHeight(context) * .09656,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(color: Color(0xff959CA8), width: 2),
@@ -76,12 +77,12 @@ class MoreScreenBody extends StatelessWidget {
             child: Center(
               child: Image.asset(
                 "assets/images/profilePer.png",
-                width: MediaQuery.sizeOf(context).width * .07209,
-                height: MediaQuery.sizeOf(context).height * .0364,
+                width: portraitWidth(context) * .07209,
+                height: portraitHeight(context) * .0364,
               ),
             ),
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * .01),
+          SizedBox(height: portraitHeight(context) * .01),
           Text(
             "Welcome, Fruit Market",
             style: TextStyle(
@@ -99,15 +100,15 @@ class MoreScreenBody extends StatelessWidget {
             fontWeight: FontWeight.bold,
             onPressed: () {},
 
-            hieght: MediaQuery.sizeOf(context).height * .0547,
-            width: MediaQuery.sizeOf(context).width * .8069,
+            hieght: portraitHeight(context) * .0547,
+            width: portraitWidth(context) * .8069,
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * .02),
+          SizedBox(height: portraitHeight(context) * .02),
           Column(
             children: tileList.map((tile) {
               return Padding(
                 padding: EdgeInsets.only(
-                  bottom: MediaQuery.sizeOf(context).height * .0047,
+                  bottom: portraitHeight(context) * .0047,
                 ),
                 child: tile,
               );

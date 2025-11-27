@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/custom_text_feild.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/very_custom_textField.dart';
@@ -12,9 +13,9 @@ class createProfileBody extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.sizeOf(context).width * 0.0953,
-            bottom: MediaQuery.sizeOf(context).height * 0.01448,
-            top: MediaQuery.sizeOf(context).height * 0.01697,
+            left: portraitWidth(context) * 0.0953,
+            bottom: portraitHeight(context) * 0.01448,
+            top: portraitHeight(context) * 0.01697,
           ),
           child: Align(
             alignment: Alignment.centerLeft,
@@ -32,14 +33,14 @@ class createProfileBody extends StatelessWidget {
         CustomTextFeild(
           lable: "Full name",
           hintText: "Firist and Last Name",
-          hight: MediaQuery.sizeOf(context).height * .0546,
-          width: MediaQuery.sizeOf(context).width * .8069,
+          hight: portraitHeight(context) * .0546,
+          width: portraitWidth(context) * .8069,
         ),
         Padding(
           padding: EdgeInsets.only(
-            top: MediaQuery.sizeOf(context).width * 0.03487,
-            bottom: MediaQuery.sizeOf(context).height * 0.01448,
-            left: MediaQuery.sizeOf(context).width * 0.0953,
+            top: portraitHeight(context) * 0.03487,
+            bottom: portraitHeight(context) * 0.01448,
+            left: portraitWidth(context) * 0.0953,
             // bottom: MediaQuery.sizeOf(context).height * 0.01448,
           ),
           child: Row(
@@ -73,15 +74,15 @@ class createProfileBody extends StatelessWidget {
         ),
 
         PhoneField(
-          hieght: MediaQuery.sizeOf(context).height * .0546,
-          width: MediaQuery.sizeOf(context).width * 0.80697,
+          hieght: portraitHeight(context) * .0546,
+          width: portraitWidth(context) * 0.80697,
         ),
 
         Padding(
           padding: EdgeInsets.only(
-            top: MediaQuery.sizeOf(context).width * 0.03487,
-            bottom: MediaQuery.sizeOf(context).height * 0.01448,
-            left: MediaQuery.sizeOf(context).width * 0.0953,
+            top: portraitHeight(context) * 0.03487,
+            bottom: portraitHeight(context) * 0.01448,
+            left: portraitWidth(context) * 0.0953,
             // bottom: MediaQuery.sizeOf(context).height * 0.01448,
           ),
           child: Row(
@@ -116,8 +117,8 @@ class createProfileBody extends StatelessWidget {
         CustomTextFeild(
           lable: "Password",
           hintText: "Password",
-          hight: MediaQuery.sizeOf(context).height * 00.0536,
-          width: MediaQuery.sizeOf(context).width * 0.80697,
+          hight: portraitHeight(context) * 00.0536,
+          width: portraitWidth(context) * 0.80697,
         ),
       ],
     );

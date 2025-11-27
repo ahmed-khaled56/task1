@@ -28,6 +28,7 @@ class _DotsIndicatorState extends State<DotsIndicator> {
     return size.height > size.width ? size.height : size.width;
   }
 
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

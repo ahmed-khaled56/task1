@@ -25,6 +25,7 @@ class _CustomOtpState extends State<CustomOtp> {
     return size.height > size.width ? size.height : size.width;
   }
 
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
 

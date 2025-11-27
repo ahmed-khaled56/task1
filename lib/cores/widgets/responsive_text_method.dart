@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 
 double getResponsiveFontSize({
   required double fontSize,
@@ -16,7 +17,7 @@ double getResponsiveFontSize({
 }
 
 double getScallfactor({required BuildContext context}) {
-  double currentWidth = MediaQuery.sizeOf(context).width;
+  double currentWidth = portraitWidth(context);
   if (currentWidth < 600) {
     return currentWidth / 400;
   } else if (currentWidth < 900) {

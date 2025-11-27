@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/payment/presentation/views/checkout_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/basket_card.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/basket_lower_bar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
-import 'package:task_1/features/payment/presentation/views/widgets/checkout_screen_body.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/dotted_line.dart';
 import 'package:task_1/features/payment/presentation/views/widgets/price_row_text.dart';
 
@@ -28,32 +27,32 @@ class BasketScreenBody extends StatelessWidget {
                 productName: "Product name",
                 note: "Up to 10% Off",
               ),
-              SizedBox(height: MediaQuery.sizeOf(context).height * .01),
+              SizedBox(height: portraitHeight(context) * .01),
               BasketItemCard(
                 beforePrice: "14.00 KD",
                 price: "12.00 KD",
 
                 productName: "Product name",
               ),
-              SizedBox(height: MediaQuery.sizeOf(context).height * .01),
+              SizedBox(height: portraitHeight(context) * .01),
               BasketItemCard(
                 beforePrice: "14.00 KD",
                 price: "12.00 KD",
 
                 productName: "Product name",
               ),
-              SizedBox(height: MediaQuery.sizeOf(context).height * .08),
+              SizedBox(height: portraitHeight(context) * .08),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.sizeOf(context).width * .05,
-                  vertical: MediaQuery.sizeOf(context).height * .009,
+                  horizontal: portraitWidth(context) * .05,
+                  vertical: portraitHeight(context) * .009,
                 ),
                 child: DottedLine(color: Color(0xffD1D1D1)),
               ),
-              SizedBox(height: MediaQuery.sizeOf(context).height * .020),
+              SizedBox(height: portraitHeight(context) * .020),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.sizeOf(context).width * .05,
+                  horizontal: portraitWidth(context) * .05,
                 ),
                 child: Column(
                   children: [
@@ -62,14 +61,14 @@ class BasketScreenBody extends StatelessWidget {
                       title: "Subtotal",
                       value: "36.00",
                     ),
-                    SizedBox(height: MediaQuery.sizeOf(context).height * .005),
+                    SizedBox(height: portraitHeight(context) * .005),
 
                     PriceRowText(
                       isTotal: false,
                       title: "Shipping Charges",
                       value: "1.50",
                     ),
-                    SizedBox(height: MediaQuery.sizeOf(context).height * .01),
+                    SizedBox(height: portraitHeight(context) * .01),
 
                     PriceRowText(
                       title: "Bag Total",
@@ -77,7 +76,7 @@ class BasketScreenBody extends StatelessWidget {
                       isTotal: true,
                     ),
 
-                    SizedBox(height: MediaQuery.sizeOf(context).height * .03),
+                    SizedBox(height: portraitHeight(context) * .03),
                     Row(
                       children: [
                         Column(
@@ -113,8 +112,8 @@ class BasketScreenBody extends StatelessWidget {
                         Align(
                           alignment: Alignment.bottomRight,
                           child: SizedBox(
-                            width: MediaQuery.sizeOf(context).width * .5209,
-                            height: MediaQuery.sizeOf(context).height * .047,
+                            width: portraitWidth(context) * .5209,
+                            height: portraitHeight(context) * .047,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xff2A5934),

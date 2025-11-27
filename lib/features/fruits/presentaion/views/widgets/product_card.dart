@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class ProductCard extends StatelessWidget {
@@ -28,11 +29,11 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: MediaQuery.sizeOf(context).width * .0209,
-        vertical: MediaQuery.sizeOf(context).height * .00086,
+        horizontal: portraitWidth(context) * .0209,
+        vertical: portraitHeight(context) * .00086,
       ),
       child: SizedBox(
-        height: MediaQuery.sizeOf(context).height * .124,
+        height: portraitHeight(context) * .124,
         child: Card(
           elevation: 5,
           shape: RoundedRectangleBorder(
@@ -41,8 +42,8 @@ class ProductCard extends StatelessWidget {
           color: Colors.white,
           child: Padding(
             padding: EdgeInsets.only(
-              left: MediaQuery.sizeOf(context).width * 0.03,
-              top: MediaQuery.sizeOf(context).height * 0.003,
+              left: portraitWidth(context) * 0.03,
+              top: portraitHeight(context) * 0.003,
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -51,12 +52,12 @@ class ProductCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(0),
                   child: Image.asset(
                     imageLink!,
-                    width: MediaQuery.sizeOf(context).width * .132,
-                    height: MediaQuery.sizeOf(context).height * .08,
+                    width: portraitWidth(context) * .132,
+                    height: portraitHeight(context) * .08,
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(width: MediaQuery.sizeOf(context).width * .04),
+                SizedBox(width: portraitWidth(context) * .04),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,9 +84,7 @@ class ProductCard extends StatelessWidget {
                         children: [
                           Padding(
                             padding: EdgeInsets.only(
-                              right:
-                                  MediaQuery.sizeOf(context).shortestSide *
-                                  .0279,
+                              right: portraitWidth(context) * .0279,
                             ),
                             child: Text(
                               "$price",
@@ -119,8 +118,8 @@ class ProductCard extends StatelessWidget {
                       Row(
                         children: [
                           Container(
-                            width: MediaQuery.sizeOf(context).width * .237,
-                            height: MediaQuery.sizeOf(context).height * .0236,
+                            width: portraitWidth(context) * .237,
+                            height: portraitHeight(context) * .0236,
                             decoration: BoxDecoration(
                               color: Color(0xffDF958F),
                               borderRadius: BorderRadius.circular(15),
@@ -147,17 +146,17 @@ class ProductCard extends StatelessWidget {
                 selleceticon != null
                     ? Padding(
                         padding: EdgeInsets.only(
-                          right: MediaQuery.sizeOf(context).width * .079,
+                          right: portraitWidth(context) * .079,
                         ),
                         child: SizedBox(
-                          width: MediaQuery.sizeOf(context).width * .127,
-                          height: MediaQuery.sizeOf(context).height * .05,
+                          width: portraitWidth(context) * .127,
+                          height: portraitHeight(context) * .05,
                           child: Image.asset(selleceticon!, fit: BoxFit.cover),
                         ),
                       )
                     : Padding(
                         padding: EdgeInsets.only(
-                          right: MediaQuery.sizeOf(context).width * .20788,
+                          right: portraitWidth(context) * .20788,
                         ),
                         child: Text("   "),
                       ),

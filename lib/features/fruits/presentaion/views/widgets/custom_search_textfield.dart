@@ -20,6 +20,7 @@ class _CustomSearchTextfieldState extends State<CustomSearchTextfield> {
     return size.height > size.width ? size.height : size.width;
   }
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: portraitWidth(context) * .9,

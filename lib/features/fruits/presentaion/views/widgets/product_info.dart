@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 
 class ProductInfo extends StatelessWidget {
@@ -11,7 +12,7 @@ class ProductInfo extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(
             //right: MediaQuery.sizeOf(context).width * .188,
-            left: MediaQuery.sizeOf(context).width * .0488,
+            left: portraitWidth(context) * .0488,
           ),
           child: Row(
             children: [
@@ -47,7 +48,7 @@ class ProductInfo extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(
             // right: MediaQuery.sizeOf(context).width * .0465,
-            left: MediaQuery.sizeOf(context).width * .0488,
+            left: portraitWidth(context) * .0488,
           ),
           child: Row(
             children: [
@@ -62,11 +63,7 @@ class ProductInfo extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Expanded(
-                child: SizedBox(
-                  width: MediaQuery.sizeOf(context).width * .2255,
-                ),
-              ),
+              Expanded(child: SizedBox(width: portraitWidth(context) * .2255)),
 
               Text(
                 "KD12.00",
@@ -79,7 +76,7 @@ class ProductInfo extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(width: MediaQuery.sizeOf(context).width * .0209),
+              SizedBox(width: portraitWidth(context) * .0209),
               Expanded(
                 child: Text(
                   "KD14.00",
@@ -100,8 +97,8 @@ class ProductInfo extends StatelessWidget {
 
         Padding(
           padding: EdgeInsets.only(
-            right: MediaQuery.sizeOf(context).width * .0265,
-            left: MediaQuery.sizeOf(context).width * .0488,
+            right: portraitWidth(context) * .0265,
+            left: portraitWidth(context) * .0488,
           ),
           child: Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.,",
@@ -118,8 +115,8 @@ class ProductInfo extends StatelessWidget {
           alignment: Alignment.topLeft,
           child: Padding(
             padding: EdgeInsets.only(
-              top: MediaQuery.sizeOf(context).height * .0165,
-              left: MediaQuery.sizeOf(context).width * .0488,
+              top: portraitHeight(context) * .0165,
+              left: portraitWidth(context) * .0488,
             ),
             child: Text(
               "Sell Per : Kartoon",
