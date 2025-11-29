@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/helper/landScapHndler.dart';
+import 'package:task_1/features/fruits/presentaion/views/basket_view.dart';
 import 'package:task_1/features/more/presentation/views/more_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/basket_lower_bar.dart';
 
 class FavouriteLowerbar extends StatefulWidget {
   const FavouriteLowerbar({super.key});
@@ -65,7 +65,7 @@ class _FavouriteLowerbarState extends State<FavouriteLowerbar> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BasketLowerBar()),
+                    MaterialPageRoute(builder: (context) => BasketView()),
                   );
                 },
                 child: Image(image: AssetImage("assets/images/IconBar3.png")),

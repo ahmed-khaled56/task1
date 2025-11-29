@@ -12,20 +12,19 @@ class FirstCustomColumn extends StatelessWidget {
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * 0.0911),
 
-        Padding(
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * .0858,
-          ),
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width * .0319,
-              height: MediaQuery.of(context).size.height * .01456,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-
+        GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: MediaQuery.of(context).size.width * .0858,
+            ),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * .0319,
+                height: MediaQuery.of(context).size.height * .01456,
                 child: Icon(icon, color: Colors.black),
               ),
             ),
