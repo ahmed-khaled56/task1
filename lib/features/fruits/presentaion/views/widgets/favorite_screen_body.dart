@@ -15,7 +15,6 @@ class FavoriteScreenBody extends StatelessWidget {
 
           child: Column(
             children: [
-              CustomUpperbar(title: "Favorite"),
               SizedBox(height: MediaQuery.sizeOf(context).height * .01),
               FavoriteCard(
                 beforePrice: "14.00 KD",

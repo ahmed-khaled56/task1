@@ -29,9 +29,6 @@ class OrderTrackingBody extends StatelessWidget {
 
     return Column(
       children: [
-        CustomUpperbar(title: "Order Tracking"),
-        SizedBox(height: MediaQuery.sizeOf(context).height * .008),
-
         Expanded(
           child: SingleChildScrollView(
             child: Column(

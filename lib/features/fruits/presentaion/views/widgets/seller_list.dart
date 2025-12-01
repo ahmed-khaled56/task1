@@ -41,6 +41,14 @@ class _SellerListState extends State<SellerList> {
         rate: 4.5,
         sellerName: "Seller Name",
       ),
+      CustomSellerCard(
+        delevPrice: "free",
+        distance: "2.5 KM",
+        foodName: "Fried Chicken",
+        openClosd: "open",
+        rate: 4.5,
+        sellerName: "Seller Name",
+      ),
     ];
 
     return SliverList(

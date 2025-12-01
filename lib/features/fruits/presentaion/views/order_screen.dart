@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/order_lower_bar.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/order_screen_body.dart';
 
 class OrderScreen extends StatelessWidget {
@@ -8,9 +9,12 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: OrderScreenBody()),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(portraitHeight(context) * .05),
+        child: CustomUpperbar(title: "My Orders", noIcon: true),
+      ),
 
-      bottomNavigationBar: OrderLowerBar(),
+      body: SafeArea(child: OrderScreenBody()),
     );
   }
 }

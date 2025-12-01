@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_1/features/fruits/presentaion/views/screen1.dart';
+import 'package:task_1/features/splash/presentaion/views/on_bordering_screen.dart';
 import 'package:task_1/features/splash/presentaion/views/widgets/splash_view_body_phone_layout.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,7 +15,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const Screen1()),
+        MaterialPageRoute(builder: (context) => const OnBorderingScreen()),
       );
     });
     super.initState();

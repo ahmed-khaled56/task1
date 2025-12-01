@@ -5,6 +5,7 @@ import 'package:task_1/features/auth/presentation/views/widgets/custom_otp.dart'
 import 'package:task_1/features/auth/presentation/views/widgets/custom_row.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/first_custom_column.dart';
 import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/Lower_bar_screens_handler.dart';
 
 class OtpScreenBody extends StatefulWidget {
   const OtpScreenBody({super.key});
@@ -53,7 +54,7 @@ class _OtpScreenBodyState extends State<OtpScreenBody> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeView()),
+                  MaterialPageRoute(builder: (context) => MainLayout()),
                 );
               },
               buttoncolor: Color(0xff204F38),

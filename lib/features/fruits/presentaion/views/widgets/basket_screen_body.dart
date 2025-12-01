@@ -19,7 +19,6 @@ class BasketScreenBody extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 100),
           child: Column(
             children: [
-              CustomUpperbar(title: "Basket"),
               BasketItemCard(
                 beforePrice: "14.00 KD",
                 price: "12.00 KD",

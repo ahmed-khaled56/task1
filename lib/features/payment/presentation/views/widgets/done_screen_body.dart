@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/custom_button.dart';
+import 'package:task_1/features/fruits/presentaion/views/order_traking_screen.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 import 'package:task_1/features/payment/presentation/views/failure_screen.dart';
 
@@ -84,7 +85,12 @@ class DoneScreenBody extends StatelessWidget {
               buttoncolor: Colors.white,
               fontSize: getResponsiveFontSize(fontSize: 18, context: context),
               fontWeight: FontWeight.bold,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => OrderTrakingScreen()),
+                );
+              },
               hieght: portraitHeight(context) * .0547,
               width: portraitWidth(context) * .8069,
             ),

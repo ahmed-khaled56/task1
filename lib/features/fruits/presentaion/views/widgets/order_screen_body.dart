@@ -72,8 +72,6 @@ class OrderScreenBody extends StatelessWidget {
     ];
     return Column(
       children: [
-        CustomUpperbar(title: "My Orders"),
-
         SizedBox(height: MediaQuery.sizeOf(context).height * .01),
 
         Expanded(

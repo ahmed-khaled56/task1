@@ -32,10 +32,6 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: HomeUpperBar(onTap: () => setState(() => isPressed = true)),
-        ),
-
-        SliverToBoxAdapter(
           child: isPressed == false
               ? Column(
                   children: [

@@ -85,7 +85,7 @@ class MoreScreenBody extends StatelessWidget {
       child: Column(
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CustomUpperbar(title: "Fruit Market"),
+          CustomUpperbar(title: "Fruit Market", noIcon: true),
           SizedBox(height: portraitHeight(context) * .04),
           Container(
             width: portraitWidth(context) * .2,

@@ -16,7 +16,7 @@ class HomeUpperBar extends StatelessWidget {
           padding: EdgeInsets.only(
             left: portraitWidth(context) * .03,
             right: portraitWidth(context) * .03,
-            top: portraitHeight(context) * .015,
+            top: portraitHeight(context) * .05,
           ),
           child: Row(
             children: [
