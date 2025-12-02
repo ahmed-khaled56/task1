@@ -27,6 +27,9 @@ class _ResetPasswordBodyState extends State<ResetPasswordBody> {
 
   @override
   Widget build(BuildContext context) {
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+
     return Form(
       key: _formKey,
       child: Column(
@@ -47,8 +50,10 @@ class _ResetPasswordBodyState extends State<ResetPasswordBody> {
           Padding(
             padding: EdgeInsets.only(
               top: portraitHeight(context) * 0.03487,
-              left: portraitWidth(context) * 0.0953,
-              // bottom: MediaQuery.sizeOf(context).height * 0.01448,
+              left: isPortrait
+                  ? portraitWidth(context) * 0.0953
+                  : MediaQuery.sizeOf(context).width * 0.33,
+              bottom: portraitHeight(context) * 0.00448,
             ),
             child: Row(
               children: [
@@ -65,7 +70,7 @@ class _ResetPasswordBodyState extends State<ResetPasswordBody> {
                   ),
                 ),
                 Text(
-                  "*",
+                  " *",
                   style: TextStyle(
                     fontSize: getResponsiveFontSize(
                       fontSize: 14,

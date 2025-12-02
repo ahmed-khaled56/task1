@@ -6,6 +6,8 @@ import 'package:task_1/features/fruits/presentaion/views/widgets/categories_list
 import 'package:task_1/features/fruits/presentaion/views/widgets/custom_search_textfield.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/custom_seller_card.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/product_card.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/product_grid.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/product_list.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/seller_card.dart';
 
 class SellerScreenBody extends StatefulWidget {
@@ -56,61 +58,6 @@ class _SellerScreenBodyState extends State<SellerScreenBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: portraitWidth(context) * .03,
-                      right: portraitWidth(context) * .03,
-                      top: portraitHeight(context) * .015,
-                    ),
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Icon(Icons.arrow_back_ios),
-                        ),
-                        Spacer(),
-                        Text(
-                          'Fruit Market',
-                          style: TextStyle(
-                            color: const Color(0xff204F38),
-                            fontSize: getResponsiveFontSize(
-                              fontSize: 24,
-                              context: context,
-                            ),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Spacer(),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isPressed = true;
-                            });
-                          },
-                          child: const Image(
-                            image: AssetImage("assets/images/search.png"),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      bottom: portraitHeight(context) * .0066,
-                    ),
-                    child: Container(
-                      height: portraitHeight(context) * 0.001,
-                      width: MediaQuery.sizeOf(context).width,
-                      color: Color(0xffDEDFDF),
-                    ),
-                  ),
-                ],
-              ),
-
               isPressed == false
                   ? SellerCard(
                       sellerName: widget.customSellerCard!.sellerName,
@@ -186,24 +133,16 @@ class _SellerScreenBodyState extends State<SellerScreenBody> {
           ),
         ),
 
-        /// ---------------------
-        ///   PRODUCTS SLIVER LIST
-        /// ---------------------
-        SliverList(
-          delegate: SliverChildBuilderDelegate((context, index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        ProductScreen(productCard: productsCardsList[index]),
-                  ),
-                );
-              },
-              child: productsCardsList[index],
-            );
-          }, childCount: productsCardsList.length),
+        SliverLayoutBuilder(
+          builder: (context, constraints) {
+            final width = constraints.crossAxisExtent;
+
+            if (width <= 600) {
+              return productList();
+            } else {
+              return product_grid();
+            }
+          },
         ),
       ],
     );

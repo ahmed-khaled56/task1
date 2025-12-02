@@ -16,87 +16,99 @@ class DoneScreenBody extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           // horizontal: MediaQuery.sizeOf(context).width * .04,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CustomUpperbar(title: "Checkout"),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // CustomUpperbar(title: "Checkout"),
+              SizedBox(height: portraitHeight(context) * .08),
 
-            SizedBox(height: portraitHeight(context) * .08),
+              Image(image: AssetImage("assets/images/done.png")),
 
-            Image(image: AssetImage("assets/images/done.png")),
+              SizedBox(height: portraitHeight(context) * .06),
 
-            SizedBox(height: portraitHeight(context) * .06),
+              Text(
+                "YOUR ORDER IS CONFIRMED!",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xff204F38),
+                  fontSize: getResponsiveFontSize(
+                    fontSize: 26,
+                    context: context,
+                  ),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
 
-            Text(
-              "YOUR ORDER IS CONFIRMED!",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xff204F38),
-                fontSize: getResponsiveFontSize(fontSize: 26, context: context),
+              SizedBox(height: portraitHeight(context) * .02),
+
+              Text(
+                "Your order code: #243188",
+                style: TextStyle(
+                  color: Color(0xff656565),
+                  fontSize: getResponsiveFontSize(
+                    fontSize: 20,
+                    context: context,
+                  ),
+                ),
+              ),
+
+              SizedBox(height: portraitHeight(context) * .01),
+
+              Text(
+                "Thank you for choosing our products!",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xff656565),
+                  fontSize: getResponsiveFontSize(
+                    fontSize: 20,
+                    context: context,
+                  ),
+                ),
+              ),
+
+              SizedBox(height: portraitHeight(context) * .05),
+
+              /// زرار Continue Shopping
+              CustomButton2(
+                Textcolor: Colors.white,
+                lable: "Continue Shopping",
+                buttoncolor: Color(0xff204F38),
+                fontSize: getResponsiveFontSize(fontSize: 18, context: context),
                 fontWeight: FontWeight.bold,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FailureScreen()),
+                  );
+                },
+                hieght: portraitHeight(context) * .0547,
+                width: portraitWidth(context) * .8069,
               ),
-            ),
 
-            SizedBox(height: portraitHeight(context) * .02),
+              SizedBox(height: portraitHeight(context) * .02),
 
-            Text(
-              "Your order code: #243188",
-              style: TextStyle(
-                color: Color(0xff656565),
-                fontSize: getResponsiveFontSize(fontSize: 20, context: context),
+              CustomButton2(
+                Textcolor: Color(0xff204F38),
+                lable: "Track Order",
+                buttoncolor: Colors.white,
+                fontSize: getResponsiveFontSize(fontSize: 18, context: context),
+                fontWeight: FontWeight.bold,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OrderTrakingScreen(),
+                    ),
+                  );
+                },
+                hieght: portraitHeight(context) * .0547,
+                width: portraitWidth(context) * .8069,
               ),
-            ),
 
-            SizedBox(height: portraitHeight(context) * .01),
-
-            Text(
-              "Thank you for choosing our products!",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xff656565),
-                fontSize: getResponsiveFontSize(fontSize: 20, context: context),
-              ),
-            ),
-
-            SizedBox(height: portraitHeight(context) * .05),
-
-            /// زرار Continue Shopping
-            CustomButton2(
-              Textcolor: Colors.white,
-              lable: "Continue Shopping",
-              buttoncolor: Color(0xff204F38),
-              fontSize: getResponsiveFontSize(fontSize: 18, context: context),
-              fontWeight: FontWeight.bold,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FailureScreen()),
-                );
-              },
-              hieght: portraitHeight(context) * .0547,
-              width: portraitWidth(context) * .8069,
-            ),
-
-            SizedBox(height: portraitHeight(context) * .02),
-
-            CustomButton2(
-              Textcolor: Color(0xff204F38),
-              lable: "Track Order",
-              buttoncolor: Colors.white,
-              fontSize: getResponsiveFontSize(fontSize: 18, context: context),
-              fontWeight: FontWeight.bold,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => OrderTrakingScreen()),
-                );
-              },
-              hieght: portraitHeight(context) * .0547,
-              width: portraitWidth(context) * .8069,
-            ),
-
-            SizedBox(height: portraitHeight(context) * .04),
-          ],
+              SizedBox(height: portraitHeight(context) * .04),
+            ],
+          ),
         ),
       ),
     );

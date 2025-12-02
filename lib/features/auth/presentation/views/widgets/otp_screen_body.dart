@@ -4,7 +4,6 @@ import 'package:task_1/features/auth/presentation/views/widgets/custom_button.da
 import 'package:task_1/features/auth/presentation/views/widgets/custom_otp.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/custom_row.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/first_custom_column.dart';
-import 'package:task_1/features/fruits/presentaion/views/Home_view.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Lower_bar_screens_handler.dart';
 
 class OtpScreenBody extends StatefulWidget {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/auth/presentation/views/reset_passowrd_screen.dart';
 import 'package:task_1/features/auth/presentation/views/signUp_screen.dart';
@@ -19,23 +20,15 @@ class _SecondLoginscreenbodyState extends State<SecondLoginscreenbody> {
   @override
   final _formKey = GlobalKey<FormState>();
 
-  double portraitWidth(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return size.width < size.height ? size.width : size.height;
-  }
-
-  double portraitHeight(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return size.height > size.width ? size.height : size.width;
-  }
-
   @override
   Widget build(BuildContext context) {
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return SingleChildScrollView(
       child: Form(
         key: _formKey,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             FirstCustomColumn(
               icon: Icons.arrow_back_ios,
@@ -49,88 +42,97 @@ class _SecondLoginscreenbodyState extends State<SecondLoginscreenbody> {
               ),
             ),
 
-            Padding(
-              padding: EdgeInsets.only(
-                top: portraitWidth(context) * 0.03487,
-                left: portraitWidth(context) * 0.0953,
-                bottom: portraitHeight(context) * 0.01448,
-              ),
-              child: Row(
-                // mainAxisAlignment: MainAxisAlignment,
-                children: [
-                  Text(
-                    "Phone Number",
-                    style: TextStyle(
-                      fontSize: getResponsiveFontSize(
-                        fontSize: 14,
-                        context: context,
-                      ),
-
-                      fontWeight: FontWeight.normal,
-                      color: Color(0xff858D9A),
-                    ),
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: portraitHeight(context) * 0.03487,
+                    left: isPortrait
+                        ? portraitWidth(context) * 0.0953
+                        : MediaQuery.sizeOf(context).width * 0.33,
+                    bottom: portraitHeight(context) * 0.00448,
                   ),
-                  Text(
-                    "*",
-                    style: TextStyle(
-                      fontSize: getResponsiveFontSize(
-                        fontSize: 14,
-                        context: context,
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment,
+                    children: [
+                      Text(
+                        "Phone Number ",
+                        style: TextStyle(
+                          fontSize: getResponsiveFontSize(
+                            fontSize: 14,
+                            context: context,
+                          ),
+
+                          fontWeight: FontWeight.normal,
+                          color: Color(0xff858D9A),
+                        ),
                       ),
+                      Text(
+                        "*",
+                        style: TextStyle(
+                          fontSize: getResponsiveFontSize(
+                            fontSize: 14,
+                            context: context,
+                          ),
 
-                      fontWeight: FontWeight.normal,
-                      color: Colors.red,
-                    ),
+                          fontWeight: FontWeight.normal,
+                          color: Colors.red,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
+                ),
 
-            PhoneField(
-              hieght: portraitHeight(context) * 00.0536,
-              width: portraitWidth(context) * 0.80697,
+                PhoneField(
+                  hieght: portraitHeight(context) * 00.0536,
+                  width: portraitWidth(context) * 0.80697,
+                ),
+              ],
             ),
 
             Padding(
               padding: EdgeInsets.only(
                 top: portraitHeight(context) * 0.03487,
-                left: portraitWidth(context) * 0.0953,
-                // bottom: MediaQuery.sizeOf(context).height * 0.01448,
+                left: isPortrait
+                    ? portraitWidth(context) * 0.0953
+                    : MediaQuery.sizeOf(context).width * 0.33,
+                bottom: portraitHeight(context) * 0.00448,
               ),
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Password",
-                      style: TextStyle(
-                        fontSize: getResponsiveFontSize(
-                          fontSize: 14,
-                          context: context,
-                        ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Password ",
+                        style: TextStyle(
+                          fontSize: getResponsiveFontSize(
+                            fontSize: 14,
+                            context: context,
+                          ),
 
-                        fontWeight: FontWeight.normal,
-                        color: Color(0xff858D9A),
-                      ),
-                    ),
-                    Text(
-                      "*",
-                      style: TextStyle(
-                        fontSize: getResponsiveFontSize(
-                          fontSize: 14,
-                          context: context,
+                          fontWeight: FontWeight.normal,
+                          color: Color(0xff858D9A),
                         ),
-
-                        fontWeight: FontWeight.normal,
-                        color: Colors.red,
                       ),
-                    ),
-                  ],
-                ),
+                      Text(
+                        "*",
+                        style: TextStyle(
+                          fontSize: getResponsiveFontSize(
+                            fontSize: 14,
+                            context: context,
+                          ),
+
+                          fontWeight: FontWeight.normal,
+                          color: Colors.red,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
             CustomTextFeild(
-              lable: "Password",
               hintText: "Password",
               hight: portraitHeight(context) * 00.0536,
               width: portraitWidth(context) * 0.80697,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/Dots_inducator.dart';
 
 class ScrollDotsIndicator extends StatefulWidget {
@@ -12,16 +13,6 @@ class ScrollDotsIndicator extends StatefulWidget {
 
 class _ScrollDotsIndicatorState extends State<ScrollDotsIndicator> {
   @override
-  double portraitWidth(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return size.width < size.height ? size.width : size.height;
-  }
-
-  double portraitHeight(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return size.height > size.width ? size.height : size.width;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(

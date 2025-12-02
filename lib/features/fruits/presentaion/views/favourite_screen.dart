@@ -11,7 +11,7 @@ class FavouriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(portraitHeight(context) * .05),
-        child: CustomUpperbar(title: "Favorite"),
+        child: CustomUpperbar(title: "Favorite", noIcon: true),
       ),
       body: SafeArea(child: FavoriteScreenBody()),
     );

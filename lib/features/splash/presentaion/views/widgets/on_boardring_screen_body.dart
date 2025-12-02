@@ -29,8 +29,6 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   Widget build(BuildContext context) {
-    // ★★★ المهم هنا ★★★
-    // اخر صفحة تظهر نفس بيانات الصفحة 1
     final int displayIndex = index == 2 ? 1 : index;
 
     return SingleChildScrollView(

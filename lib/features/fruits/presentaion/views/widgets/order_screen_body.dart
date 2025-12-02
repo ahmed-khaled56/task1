@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/features/fruits/presentaion/views/order_traking_screen.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/order_card.dart';
 
 class OrderScreenBody extends StatelessWidget {
@@ -75,21 +76,52 @@ class OrderScreenBody extends StatelessWidget {
         SizedBox(height: MediaQuery.sizeOf(context).height * .01),
 
         Expanded(
-          child: ListView.builder(
-            scrollDirection: Axis.vertical,
-            itemCount: ordersList.length,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => OrderTrakingScreen(),
-                    ),
-                  );
-                },
-                child: ordersList[index],
-              );
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              bool isPortrait =
+                  MediaQuery.of(context).orientation == Orientation.portrait;
+
+              return isPortrait
+                  ? ListView.builder(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      itemCount: ordersList.length,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => OrderTrakingScreen(),
+                              ),
+                            );
+                          },
+                          child: ordersList[index],
+                        );
+                      },
+                    )
+                  : GridView.builder(
+                      padding: EdgeInsets.all(16),
+                      itemCount: ordersList.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: portraitHeight(context) * .017,
+                        crossAxisSpacing: portraitWidth(context) * .037,
+                        childAspectRatio: 3.2,
+                      ),
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => OrderTrakingScreen(),
+                              ),
+                            );
+                          },
+                          child: ordersList[index],
+                        );
+                      },
+                    );
             },
           ),
         ),

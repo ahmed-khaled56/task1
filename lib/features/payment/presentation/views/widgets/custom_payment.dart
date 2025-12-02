@@ -27,7 +27,7 @@ class CustomPayment extends StatelessWidget {
 
             child: Container(
               margin: EdgeInsets.symmetric(
-                // horizontal: MediaQuery.sizeOf(context).width * .009,
+                horizontal: portraitWidth(context) * .009,
               ),
               padding: EdgeInsets.symmetric(
                 horizontal: portraitWidth(context) * .047,

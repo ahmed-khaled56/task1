@@ -3,8 +3,9 @@ import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/ads_list.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/categories_list.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/custom_search_textfield.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/home_upper_bar.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/custom_seller_card.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/scroll_dots_indicator.dart';
+import 'package:task_1/features/fruits/presentaion/views/widgets/seller_gridList.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/seller_list.dart';
 
 class HomeBodyScreen extends StatefulWidget {
@@ -26,7 +27,44 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
 
   bool isPressed = false;
 
-  @override
+  final List<dynamic> cardsList = const [
+    CustomSellerCard(
+      delevPrice: "0.5 KD",
+      distance: "2.5 KM",
+      foodName: "Beverages",
+      icon: "assets/images/icon.png",
+      openClosd: "open",
+      rate: 4.5,
+      sellerName: "Seller Name",
+      imageLink: "assets/images/sellerImage.png",
+    ),
+    CustomSellerCard(
+      delevPrice: "0.5 KD",
+      distance: "2.5 KM",
+      foodName: "Pizza",
+      icon: "assets/images/icon2.png",
+      openClosd: "closed",
+      rate: 4.5,
+      sellerName: "Seller Name",
+    ),
+    CustomSellerCard(
+      delevPrice: "free",
+      distance: "2.5 KM",
+      foodName: "Fried Chicken",
+      openClosd: "open",
+      rate: 4.5,
+      sellerName: "Seller Name",
+    ),
+    CustomSellerCard(
+      delevPrice: "free",
+      distance: "2.5 KM",
+      foodName: "Fried Chicken",
+      openClosd: "open",
+      rate: 4.5,
+      sellerName: "Seller Name",
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -67,8 +105,16 @@ class _HomeBodyScreenState extends State<HomeBodyScreen> {
             ),
           ),
         ),
-
-        SellerList(),
+        SliverLayoutBuilder(
+          builder: (context, constraints) {
+            final width = constraints.crossAxisExtent;
+            if (width <= 600) {
+              return SellerList(cardsList: cardsList);
+            } else {
+              return SellerGrid(cardsList: cardsList);
+            }
+          },
+        ),
       ],
     );
   }

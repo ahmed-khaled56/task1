@@ -11,57 +11,59 @@ class FailureScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CustomUpperbar(title: "Checkout"),
-          SizedBox(height: portraitHeight(context) * .12),
-          Image(image: AssetImage("assets/images/failure.png")),
-          SizedBox(height: portraitHeight(context) * .06),
-          Text(
-            "OPS!",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Color(0xffFF4A4A),
-              fontSize: getResponsiveFontSize(fontSize: 26, context: context),
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // CustomUpperbar(title: "Checkout"),
+            SizedBox(height: portraitHeight(context) * .12),
+            Image(image: AssetImage("assets/images/failure.png")),
+            SizedBox(height: portraitHeight(context) * .06),
+            Text(
+              "OPS!",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color(0xffFF4A4A),
+                fontSize: getResponsiveFontSize(fontSize: 26, context: context),
 
-              fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          SizedBox(height: portraitHeight(context) * .02),
+            SizedBox(height: portraitHeight(context) * .02),
 
-          Text(
-            textAlign: TextAlign.center,
-            "Error while confirming your payment/order",
+            Text(
+              textAlign: TextAlign.center,
+              "Error while confirming your payment/order",
 
-            style: TextStyle(
-              color: Color(0xff656565),
+              style: TextStyle(
+                color: Color(0xff656565),
+                fontSize: getResponsiveFontSize(fontSize: 18, context: context),
+
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+
+            SizedBox(height: portraitHeight(context) * .06),
+
+            CustomButton2(
+              Textcolor: Colors.white,
+
+              lable: "Back",
+              buttoncolor: Color(0xffFF4A4A),
               fontSize: getResponsiveFontSize(fontSize: 18, context: context),
-
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.bold,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FailureScreen()),
+                );
+              },
+              hieght: portraitHeight(context) * .0547,
+              width: portraitWidth(context) * .8069,
             ),
-          ),
-
-          SizedBox(height: portraitHeight(context) * .06),
-
-          CustomButton2(
-            Textcolor: Colors.white,
-
-            lable: "Back",
-            buttoncolor: Color(0xffFF4A4A),
-            fontSize: getResponsiveFontSize(fontSize: 18, context: context),
-            fontWeight: FontWeight.bold,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => FailureScreen()),
-              );
-            },
-            hieght: portraitHeight(context) * .0547,
-            width: portraitWidth(context) * .8069,
-          ),
-          SizedBox(height: portraitHeight(context) * .02),
-        ],
+            SizedBox(height: portraitHeight(context) * .02),
+          ],
+        ),
       ),
     );
   }

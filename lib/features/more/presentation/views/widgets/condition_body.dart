@@ -9,7 +9,6 @@ class ConditionBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomUpperbar(title: "Terms and Conditions"),
         Expanded(
           child: SingleChildScrollView(
             child: Column(

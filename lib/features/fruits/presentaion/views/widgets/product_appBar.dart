@@ -19,7 +19,7 @@ class _ProductAppbarState extends State<ProductAppbar> {
           padding: EdgeInsets.only(
             left: portraitWidth(context) * .03,
             right: portraitWidth(context) * .03,
-            top: portraitHeight(context) * .015,
+            top: portraitHeight(context) * .036,
           ),
           child: Row(
             children: [

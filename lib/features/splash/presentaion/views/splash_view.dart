@@ -25,16 +25,17 @@ class _SplashViewState extends State<SplashView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff003602),
+      body: SplashViewBodyPhoneLayout(),
 
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth <= 600) {
-            return SplashViewBodyPhoneLayout();
-          } else {
-            return SplashViewBodyPhoneLayout();
-          }
-        },
-      ),
+      // body: LayoutBuilder(
+      //   builder: (context, constraints) {
+      //     if (constraints.maxWidth <= 600) {
+      //       return SplashViewBodyPhoneLayout();
+      //     } else {
+      //       return SplashViewBodyPhoneLayout();
+      //     }
+      //   },
+      // ),
     );
   }
 }

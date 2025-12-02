@@ -10,7 +10,7 @@ class AdsList extends StatefulWidget {
 }
 
 class _AdsListState extends State<AdsList> {
-  final ScrollController _controller = ScrollController();
+  final PageController _pageController = PageController();
 
   final List<String> images = [
     "assets/images/add.png",
@@ -25,17 +25,17 @@ class _AdsListState extends State<AdsList> {
   void initState() {
     super.initState();
 
-    _controller.addListener(() {
-      double offset = _controller.offset;
-      double itemWidth = MediaQuery.of(context).size.width;
+    // _pageController.addListener(() {
+    //   double offset = _pageController.offset;
+    //   double itemWidth = MediaQuery.of(context).size.width;
 
-      int index = (offset / itemWidth).round();
+    //   int index = (offset / itemWidth).round();
 
-      if (index != lastIndex) {
-        lastIndex = index;
-        widget.onPageChanged?.call(index);
-      }
-    });
+    //   if (index != lastIndex) {
+    //     lastIndex = index;
+    //     widget.onPageChanged?.call(index);
+    //   }
+    // });
   }
 
   @override
@@ -50,8 +50,10 @@ class _AdsListState extends State<AdsList> {
 
           right: portraitWidth(context) * .03,
         ),
-        child: ListView.builder(
-          controller: _controller,
+        child: PageView.builder(
+          onPageChanged: widget.onPageChanged,
+
+          controller: _pageController,
           scrollDirection: Axis.horizontal,
           itemCount: images.length,
           itemBuilder: (context, index) {

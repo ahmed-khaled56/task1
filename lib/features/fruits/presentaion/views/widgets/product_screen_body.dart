@@ -29,7 +29,6 @@ class _ProductScreenBodyState extends State<ProductScreenBody> {
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ProductAppbar(),
           productImage(),
           ProductInfo(),
           SelectionColumn(

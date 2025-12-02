@@ -31,7 +31,6 @@ class createProfileBody extends StatelessWidget {
           ),
         ),
         CustomTextFeild(
-          lable: "Full name",
           hintText: "Firist and Last Name",
           hight: portraitHeight(context) * .0546,
           width: portraitWidth(context) * .8069,
@@ -115,7 +114,6 @@ class createProfileBody extends StatelessWidget {
           ),
         ),
         CustomTextFeild(
-          lable: "Password",
           hintText: "Password",
           hight: portraitHeight(context) * 00.0536,
           width: portraitWidth(context) * 0.80697,

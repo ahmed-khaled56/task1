@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/auth/presentation/views/widgets/custom_button.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/Custom_upperbar.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/cancel_sheet.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/order_tracking_stages.dart';
 import 'package:task_1/features/fruits/presentaion/views/widgets/tracking_order_info.dart';

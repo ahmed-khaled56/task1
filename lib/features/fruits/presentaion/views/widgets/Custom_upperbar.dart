@@ -7,9 +7,11 @@ class CustomUpperbar extends StatelessWidget {
     super.key,
     @required this.title,
     @required this.noIcon,
+    @required this.onBack,
   });
   final String? title;
   final bool? noIcon;
+  final VoidCallback? onBack;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,7 +27,11 @@ class CustomUpperbar extends StatelessWidget {
               noIcon != true
                   ? GestureDetector(
                       onTap: () {
-                        Navigator.pop(context);
+                        if (onBack != null) {
+                          onBack!();
+                        } else {
+                          Navigator.pop(context);
+                        }
                       },
                       child: Icon(Icons.arrow_back_ios, color: Colors.black),
                     )

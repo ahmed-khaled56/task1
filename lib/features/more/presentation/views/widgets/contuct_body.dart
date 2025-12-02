@@ -15,7 +15,6 @@ class ContuctBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CustomUpperbar(title: "Contact Us"),
           SizedBox(height: portraitHeight(context) * .02),
           ContactTextField(),
           SizedBox(height: portraitHeight(context) * .02),

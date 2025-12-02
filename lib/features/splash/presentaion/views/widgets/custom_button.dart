@@ -9,8 +9,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final orenationDiriction = MediaQuery.of(context).orientation;
-    print(orenationDiriction);
+    // final orenationDiriction = MediaQuery.of(context).orientation;
+    // print(orenationDiriction);
 
     final realHeight = size.height > size.width ? size.height : size.width;
     final realWidth = size.width < size.height ? size.width : size.height;
