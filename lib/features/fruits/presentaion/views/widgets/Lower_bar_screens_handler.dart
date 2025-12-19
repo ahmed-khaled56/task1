@@ -16,6 +16,7 @@ class MainLayout extends StatefulWidget {
 class _MainLayoutState extends State<MainLayout> {
   int index = 0;
   late List<Widget> screens;
+  @override
   void initState() {
     screens = [
       HomeView(),

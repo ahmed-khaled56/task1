@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:task_1/cores/helper/landScapHndler.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/fruits/presentaion/views/favourite_screen.dart';
-import 'package:task_1/features/fruits/presentaion/views/order_screen.dart';
-import 'package:task_1/features/fruits/presentaion/views/widgets/Lower_bar_screens_handler.dart';
 import 'package:task_1/features/more/presentation/views/conditions_screen.dart';
 import 'package:task_1/features/more/presentation/views/contuct_screen.dart';
 import 'package:task_1/features/more/presentation/views/profile_screen.dart';

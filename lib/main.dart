@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:task_1/cores/services/laocal_notification_service.dart';
 import 'package:task_1/features/splash/presentaion/views/splash_view.dart';
+import 'package:timezone/data/latest.dart' as tz;
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  tz.initializeTimeZones();
+  await LaocalNotificationService.initLocalNotify();
+
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

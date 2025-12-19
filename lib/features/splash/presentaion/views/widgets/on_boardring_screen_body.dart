@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_1/cores/helper/landScapHndler.dart';
+import 'package:task_1/cores/services/laocal_notification_service.dart';
 import 'package:task_1/cores/widgets/responsive_text_method.dart';
 import 'package:task_1/features/auth/presentation/views/login_screen.dart';
 import 'package:task_1/features/splash/presentaion/views/widgets/custom_button.dart';
@@ -50,10 +51,15 @@ class _OnBoardingState extends State<OnBoarding> {
 
           SizedBox(height: portraitHeight(context) * 0.06545),
 
-          Image.asset(
-            "assets/images/screen1.png",
-            height: portraitHeight(context) * .2932,
-            width: portraitWidth(context) * .6630,
+          GestureDetector(
+            onTap: () {
+              LaocalNotificationService.basicNotofication();
+            },
+            child: Image.asset(
+              "assets/images/screen1.png",
+              height: portraitHeight(context) * .2932,
+              width: portraitWidth(context) * .6630,
+            ),
           ),
 
           SizedBox(height: portraitHeight(context) * 0.02648),
